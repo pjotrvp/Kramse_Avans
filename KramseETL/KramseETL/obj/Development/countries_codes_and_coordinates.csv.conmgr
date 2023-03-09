@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="countries_codes_and_coordinates.csv"
+  DTS:DTSID="{F49FE5D3-C7DD-4753-8CF6-40D074EAB484}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Avans\Jaar2\Periode3\projectBusinessIntelligence\Kramse2\Bronnen\countries_codes_and_coordinates.csv" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
