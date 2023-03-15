@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{381DCB46-1F96-462C-94B6-10FA46BC57BD}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{ABA7B273-0FBE-4563-A1E9-E444664879AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5127,6 +5127,94 @@
           version="1">
           <components>
             <component
+              refId="Package\Load ShipmentDetail\Calculate amount of containers"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Calculate amount of containers"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input].Columns[ContainerFirst]"
+                      cachedDataType="numeric"
+                      cachedName="ContainerFirst"
+                      cachedPrecision="18"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerFirst]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input].Columns[ContainerLast]"
+                      cachedDataType="numeric"
+                      cachedName="ContainerLast"
+                      cachedPrecision="18"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerLast]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Output].Columns[ContAmount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Output].Columns[ContAmount]"
+                      name="ContAmount"
+                      precision="20"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,18,0)#{Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerLast]} - #{Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerFirst]} + 1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,0)ContainerLast - ContainerFirst + 1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load ShipmentDetail\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -5223,6 +5311,27 @@
                       cachedName="ContainertypeId"
                       externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainertypeId]"
                       lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainertypeId]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContainerFirst]"
+                      cachedDataType="numeric"
+                      cachedName="ContainerFirst"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerFirst]"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerFirst]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContainerLast]"
+                      cachedDataType="numeric"
+                      cachedName="ContainerLast"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerLast]"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerLast]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContAmount]"
+                      cachedDataType="numeric"
+                      cachedName="ContAmount"
+                      cachedPrecision="20"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContAmount]"
+                      lineageId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Output].Columns[ContAmount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5241,10 +5350,20 @@
                       name="Item" />
                     <externalMetadataColumn
                       refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainertypeId]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="ContainertypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerFirst]"
+                      dataType="i4"
+                      name="ContainerFirst" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerLast]"
+                      dataType="i4"
+                      name="ContainerLast" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContAmount]"
+                      dataType="i4"
+                      name="ContAmount" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5436,11 +5555,126 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load ShipmentDetail\Split ContainerNr column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Split ContainerNr column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load ShipmentDetail\Split ContainerNr column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\Split ContainerNr column.Inputs[Derived Column Input].Columns[ContainerNr]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ContainerNr"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load ShipmentDetail\Split ContainerNr column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerFirst]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerFirst]"
+                      name="ContainerFirst"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,18,0)[LEFT](#{Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]},[FINDSTRING](#{Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]},"-",1) - 1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,0)LEFT(ContainerNr,FINDSTRING(ContainerNr,"-",1) - 1)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerLast]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output].Columns[ContainerLast]"
+                      name="ContainerLast"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,18,0)[RIGHT](#{Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]},[LEN](#{Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]}) - [FINDSTRING](#{Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerNr]},"-",1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,18,0)RIGHT(ContainerNr,LEN(ContainerNr) - FINDSTRING(ContainerNr,"-",1))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load ShipmentDetail\Split ContainerNr column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
-              refId="Package\Load ShipmentDetail.Paths[OLE DB Source Output]"
+              refId="Package\Load ShipmentDetail.Paths[Derived Column Output]"
+              endId="Package\Load ShipmentDetail\Calculate amount of containers.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Load ShipmentDetail\Split ContainerNr column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load ShipmentDetail.Paths[Derived Column Output1]"
               endId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load ShipmentDetail\Calculate amount of containers.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load ShipmentDetail.Paths[OLE DB Source Output]"
+              endId="Package\Load ShipmentDetail\Split ContainerNr column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -5818,6 +6052,905 @@
           version="1">
           <components>
             <component
+              refId="Package\Load VoyagePort\Data sort script"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Data sort script"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_a3da9c430f334643ac1c7d02493e73fe")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_a3da9c430f334643ac1c7d02493e73fe")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        DateTime dt = Row.VpLegDateDepart;
+        int sortValue = (dt.Year * 10000) + (dt.Month * 100) + dt.Day;
+        Row.SortDateOutput = sortValue;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public DateTime VpLegDateDepart
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[0]);
+        }
+    }
+    public bool VpLegDateDepart_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public Int32 SortDateOutput
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool SortDateOutput_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_a3da9c430f334643ac1c7d02493e73fe.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{683dabe5-05e5-4011-adcc-e3e4b33611fb}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_a3da9c430f334643ac1c7d02493e73fe</RootNamespace>
+    <AssemblyName>SC_a3da9c430f334643ac1c7d02493e73fe</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_a3da9c430f334643ac1c7d02493e73fe" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_a3da9c430f334643ac1c7d02493e73fe</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_a3da9c430f334643ac1c7d02493e73fe</msb:DisplayName>
+    <msb:ProjectId>{3805BCEC-7DD4-4D7B-AA28-80A0E29F0923}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_a3da9c430f334643ac1c7d02493e73fe.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Settings.get_Default():SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Sett" +
+    "ings")]
+
+namespace SC_a3da9c430f334643ac1c7d02493e73fe.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_a3da9c430f334643ac1c7d02493e73fe.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_a3da9c430f334643ac1c7d02493e73fe.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_a3da9c430f334643ac1c7d02493e73fe.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFNuEGQAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAOjIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOgxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAQBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAc
+MgAAAAAAAEgAAAACAAUA3CEAAFQPAAABAAAAAAAAADAxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAMAMAAAAAEAABEDbwYAAAYK
+EgAoEgAACiAQJwAAWhIAKBMAAAofZFpYEgAoFAAAClgLAwdvCAAABioeAigMAAAGKioCAwQFKBUA
+AAoqUgJ7FgAACgJ7FwAAChaUbxgAAAoqIgIWKBkAAAoqOgIXA4wbAAABKBoAAAoqWgMsCAIXKBsA
+AAoqcgEAAHBzHAAACnoeAigdAAAKKh4CKB4AAAoqfgIoHwAACgICcxAAAAZ9AQAABAICcxEAAAZ9
+AgAABCqSBHKeAABwGm8gAAAKLBUCBQIDKCEAAAoOBHMFAAAGbw4AAAYqSisHAgNvDwAABgNvCgAA
+Bi3xKgYqOgIoIgAACgIDfQMAAAQqOgIoIgAACgIDfQQAAAQqHgIoIgAACiqufgUAAAQtHnKuAABw
+0AcAAAIoIwAACm8kAAAKcyUAAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAigm
+AAAKKi5zFwAABoAHAAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAIgF
+AAAjfgAA9AUAAHwGAAAjU3RyaW5ncwAAAABwDAAAIAEAACNVUwCQDQAAEAAAACNHVUlEAAAAoA0A
+ALQBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEAAAAhAAAACAAAAAcAAAAYAAAA
+DwAAACYAAAAQAAAAAQAAAAMAAAAHAAAACAAAAAEAAAAEAAAAAQAAAAAABgMBAAAAAAAGAPYBgwQG
+AIoCgwQGAEIBcAQPAPcEAAAGAG8BvAMGANkBvAMGALoBvAMGAHECvAMGABYCvAMGAC8CvAMGAIYB
+vAMGAKEBxQIKAEoCjwAGAIYAdAMKAEIEjwAOADMEjwAKAAUEjwAKAL0FjwAGAIAFdAMGACUBcAQG
+AFMEowQGAPkDpwMSAPUA8AISAFYB8AISAN0AkgMGAAoBgwQGAAEAdAMGAM4DdAMGAN8CdAMGAOgD
+dAMGALAAdAMGAFUAdAMGAHEGvAMAAAAABwAAAAAAAQABAAEAEACHAwAAEAABAAEAAQAQACYEAAA9
+AAEABQABABAAnwUAAEkAAQAMAAEAEAB0BQAATQADABAAAQAQADUFAABNAAQAEQAAABAAqgQGBU0A
+BQASAAABEABkBQYFZQAHABYABgB0BYEABgA1BYUAAQCtBYkAAQCtBYkAEQB7A40AEQDNAJEAEQAh
+AJUAUCAAAAAAxgCoAgYAAQBYIAAAAADGALMCBgABAGAgAAAAAMYARgaZAAEAnCAAAAAAhhhjBAYA
+AgCkIAAAAACGGGMEJQACAK8gAAAAAIYI6gWfAAUAxCAAAAAAhgguA0gABQDNIAAAAACGCDMGAQAF
+ANwgAAAAAIYISQOkAAYA8yAAAAAAhgBdBkgABwD7IAAAAACGAIcFSAAHAAMhAAAAAIYYYwQGAAcA
+IyEAAAAAxgAmBqkABwBIIQAAAADGAR8GmQALAFshAAAAAMYBRgaZAAwAXSEAAAAAhhhjBLMADQBs
+IQAAAACGGGMEswAOAHshAAAAAIMYYwQGAA8AgyEAAAAAkwhPBLkADwCvIQAAAACTCLUAvgAPALYh
+AAAAAJMIwQDDAA8AviEAAAAAlgiTBckAEADFIQAAAACGGGMEBgAQAM0hAAAAAJEYaQTOABAAAAAB
+AGEGAAABAEgEAAACAD8FAAADABMEAAABAL8CAAABAL8CAAABABAAAAACAHkAAAADAEgEAAAEABME
+AAABAEgEAAABAGEGAAABAMMFAAABAMMFAAABAL8CCQBjBAEAEQBjBAYAGQBjBAoAKQBjBBAAMQBj
+BBAAOQBjBBAAQQBjBBAASQBjBBAAUQBjBBAAWQBjBBAAYQBjBBAAaQBjBAYAoQBjBAYAwQBjBBUA
+0QBjBAYAkQCoAgYAkQCzAgYAcQAdBCEAcQDmAiEAcQBlBiEAeQBjBCUAeQBIBC8AeQA/BTMAgQCD
+ADcAeQBcAz0AeQBrA0IAeQBjAwEA4QBjBBAAeQBdBkgAeQCHBUgAkQBjBAYA6QBtBUwAkQBTBVMA
+mQBjBAYA+QBnAFkA+QBtBmEAqQBjBGcAyQBjBAYALgALAO4ALgATAPcALgAbABYBLgAjAB8BLgAr
+AEgBLgAzAEgBLgA7AEgBLgBDAB8BLgBLAE4BLgBTAEgBLgBbAGUBQwBjAK8BqQBzABYByQBzABYB
+4QB7AK8B4wBrAK8BGwADAAEABwAFAAgABwAAAO4F0gAAADID1wAAADcG2wAAAE0D1wAAAFME3wAA
+ANUA5AAAAJcF6QACAAYAAwACAAcABQABAAgABwABAAkACQACABMACwACABQADQABABUADQACABYA
+DwAEgAAAAQAAAAAAAAAAAAAAAAAxAAAABAAAAAAAAAAAAAAAbwAYAAAAAAAQAAAAAAAAAAAAAAB4
+AM0FAAAAABAAAAAAAAAAAAAAAHgA/gUAAAAABAAAAAAAAAAAAAAAbwB0AwAAAAAAAAAAAQAAALQE
+AAAAAABJbnQzMgA8TW9kdWxlPgBJbnB1dElEAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBTQ19h
+M2RhOWM0MzBmMzM0NjQzYWMxYzdkMDI0OTNlNzNmZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBl
+RnJvbUhhbmRsZQBJbnB1dE5hbWUAR2V0RGF0ZVRpbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+UGlwZWxpbmUAVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBw
+bGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0
+ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmli
+dXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2Vt
+Ymx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNv
+bmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxh
+dGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+UHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFN0
+cmluZwBnZXRfTW9udGgAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDX2EzZGE5YzQzMGYzMzQ2NDNh
+YzFjN2QwMjQ5M2U3M2ZlLmRsbABnZXRfVnBMZWdEYXRlRGVwYXJ0X0lzTnVsbABzZXRfU29ydERh
+dGVPdXRwdXRfSXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlw
+dE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJl
+ZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1
+cmVJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAGdldF9ZZWFyAElucHV0MEJ1ZmZlcgBQaXBl
+bGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IA
+U3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVt
+LlJlc291cmNlcwBTQ19hM2RhOWM0MzBmMzM0NjQzYWMxYzdkMDI0OTNlNzNmZS5Qcm9wZXJ0aWVz
+LlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfYTNkYTljNDMwZjMzNDY0M2Fj
+MWM3ZDAyNDkzZTczZmUuUHJvcGVydGllcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBH
+ZXRDb2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBPYmplY3QARW5kT2ZS
+b3dzZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29t
+cG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQAZ2V0X1ZwTGVnRGF0ZURlcGFydABN
+aWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AHNldF9T
+b3J0RGF0ZU91dHB1dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAZ2V0X0RheQBnZXRf
+QXNzZW1ibHkAAAAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0
+ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA
+YQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9J
+AG4AcAB1AHQAIAAwAABxUwBDAF8AYQAzAGQAYQA5AGMANAAzADAAZgAzADMANAA2ADQAMwBhAGMA
+MQBjADcAZAAwADIANAA5ADMAZQA3ADMAZgBlAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBz
+AG8AdQByAGMAZQBzAAAeEfpVCSjzR4Y8B2OgO3Y1AAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFd
+BQcCETkIAyAACAkgAwESQR0IEkUDBhJBAwYdCAUgARE5CAQgAQIIBSACAQgcAyAAAgYgAgIOEXkF
+IAEdCAgHAAESfRGAgQUgABKAhQcgAgEOEoCFCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJJ
+AwYSVQMGElkDBhIgBSABARIMBCAAETkEIAEBAgkgBAEIDhJBEkUFIAEBEkkEAAASVQQAABJZBQAB
+ARJZBAAAEiADAAABBCgAETkDKAACAygACAQIABJVBAgAElkECAASIAgBAAgAAAAAAB4BAAEAVAIW
+V3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfYTNkYTljNDMwZjMzNDY0M2Fj
+MWM3ZDAyNDkzZTczZmUAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMwAASQEAGi5ORVRGcmFt
+ZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29y
+ayA0LjcEAQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRl
+ciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlU
+b2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0
+AgAAAAAAAAAAAAAAUEFEUEFEULQAAAAQMgAAAAAAAAAAAAAqMgAAACAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAHDIAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwBhADMAZABhADkAYwA0ADMAMABmADMAMwA0ADYANAAzAGEAYwAxAGMANwBkADAAMgA0
+ADkAMwBlADcAMwBmAGUAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfAGEAMwBkAGEAOQBj
+ADQAMwAwAGYAMwAzADQANgA0ADMAYQBjADEAYwA3AGQAMAAyADQAOQAzAGUANwAzAGYAZQAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AYQAz
+AGQAYQA5AGMANAAzADAAZgAzADMANAA2ADQAMwBhAGMAMQBjADcAZAAwADIANAA5ADMAZQA3ADMA
+ZgBlAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGEAMwBk
+AGEAOQBjADQAMwAwAGYAMwAzADQANgA0ADMAYQBjADEAYwA3AGQAMAAyADQAOQAzAGUANwAzAGYA
+ZQAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAPDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_a3da9c430f334643ac1c7d02493e73fe</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">C5</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load VoyagePort\Data sort script.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Data sort script.Inputs[Input 0].Columns[Vp_LegDateDepart]"
+                      cachedDataType="date"
+                      cachedName="Vp_LegDateDepart"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateDepart]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load VoyagePort\Data sort script.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Load VoyagePort\Data sort script.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Data sort script.Outputs[Output 0].Columns[SortDateOutput]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Data sort script.Outputs[Output 0].Columns[SortDateOutput]"
+                      name="SortDateOutput" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load VoyagePort\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -5894,44 +7027,44 @@
                       cachedDataType="i4"
                       cachedName="VV_VoyageId"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VV_VoyageId]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VV_VoyageId]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VV_VoyageId]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VP_PortIdCurrent]"
                       cachedDataType="i4"
                       cachedName="VP_PortIdCurrent"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VP_PortIdCurrent]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VP_PortIdCurrent]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VP_PortIdCurrent]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vp_PortIdNext]"
                       cachedDataType="i4"
                       cachedName="Vp_PortIdNext"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vp_PortIdNext]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortIdNext]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortIdNext]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vp_LegDateDepart]"
                       cachedDataType="date"
                       cachedName="Vp_LegDateDepart"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vp_LegDateDepart]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateDepart]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateDepart]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vp_LegDateArrival]"
                       cachedDataType="date"
                       cachedName="Vp_LegDateArrival"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vp_LegDateArrival]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateArrival]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateArrival]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vp_Traject_Distance]"
                       cachedDataType="i4"
                       cachedName="Vp_Traject_Distance"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vp_Traject_Distance]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_Traject_Distance]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_Traject_Distance]" />
                     <inputColumn
                       refId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vp_PortOrder]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Vp_PortOrder"
                       externalMetadataColumnId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vp_PortOrder]"
-                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortOrder]" />
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortOrder]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6209,13 +7342,296 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Load VoyagePort\Sort Date"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Date"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[VV_VoyageId]"
+                      cachedDataType="i4"
+                      cachedName="VV_VoyageId"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VV_VoyageId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[VP_PortIdCurrent]"
+                      cachedDataType="i4"
+                      cachedName="VP_PortIdCurrent"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VP_PortIdCurrent]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[Vp_PortIdNext]"
+                      cachedDataType="i4"
+                      cachedName="Vp_PortIdNext"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortIdNext]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[Vp_LegDateDepart]"
+                      cachedDataType="date"
+                      cachedName="Vp_LegDateDepart"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateDepart]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[Vp_LegDateArrival]"
+                      cachedDataType="date"
+                      cachedName="Vp_LegDateArrival"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateArrival]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[Vp_Traject_Distance]"
+                      cachedDataType="i4"
+                      cachedName="Vp_Traject_Distance"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_Traject_Distance]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[Vp_PortOrder]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Vp_PortOrder"
+                      lineageId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortOrder]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input].Columns[SortDateOutput]"
+                      cachedDataType="i4"
+                      cachedName="SortDateOutput"
+                      lineageId="Package\Load VoyagePort\Data sort script.Outputs[Output 0].Columns[SortDateOutput]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VV_VoyageId]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VV_VoyageId]"
+                      name="VV_VoyageId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VV_VoyageId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VP_PortIdCurrent]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[VP_PortIdCurrent]"
+                      name="VP_PortIdCurrent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[VP_PortIdCurrent]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortIdNext]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortIdNext]"
+                      name="Vp_PortIdNext">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortIdNext]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateDepart]"
+                      dataType="date"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateDepart]"
+                      name="Vp_LegDateDepart">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateDepart]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateArrival]"
+                      dataType="date"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_LegDateArrival]"
+                      name="Vp_LegDateArrival">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_LegDateArrival]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_Traject_Distance]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_Traject_Distance]"
+                      name="Vp_Traject_Distance">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_Traject_Distance]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortOrder]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[Vp_PortOrder]"
+                      name="Vp_PortOrder">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output].Columns[Vp_PortOrder]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[SortDateOutput]"
+                      dataType="i4"
+                      lineageId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output].Columns[SortDateOutput]"
+                      name="SortDateOutput"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load VoyagePort\Data sort script.Outputs[Output 0].Columns[SortDateOutput]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Load VoyagePort.Paths[OLE DB Source Output]"
-              endId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load VoyagePort\Data sort script.Inputs[Input 0]"
               name="OLE DB Source Output"
               startId="Package\Load VoyagePort\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load VoyagePort.Paths[Output 0]"
+              endId="Package\Load VoyagePort\Sort Date.Inputs[Sort Input]"
+              name="Output 0"
+              startId="Package\Load VoyagePort\Data sort script.Outputs[Output 0]" />
+            <path
+              refId="Package\Load VoyagePort.Paths[Sort Output]"
+              endId="Package\Load VoyagePort\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Load VoyagePort\Sort Date.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -6330,7 +7746,7 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Load Consignor"
-          TopLeft="40.7142858009557,133.05882341278" />
+          TopLeft="40.7142858009557,142.05882341278" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load Container"
@@ -6358,7 +7774,7 @@
         <NodeLayout
           Size="175,42"
           Id="Package\Load ShipmentDetail"
-          TopLeft="104.285714507711,400.705882001707" />
+          TopLeft="94.285714507711,413.705882001707" />
         <NodeLayout
           Size="139,42"
           Id="Package\Load Voyage"
@@ -6366,33 +7782,33 @@
         <NodeLayout
           Size="158,42"
           Id="Package\Load VoyagePort"
-          TopLeft="450.000000957931,354.058823219066" />
+          TopLeft="462.000000957931,343.058823219066" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="228.304762327468,102.776470534612">
+          TopLeft="228.238095660802,103.176470534612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-111.990476526513,30.2823528781687"
+              EndConnector="-112.023809859846,38.8823528781682"
               Start="0,0"
-              End="-111.990476526513,22.7823528781687">
+              End="-112.023809859846,31.3823528781682">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,4.11654410075916" />
+                    End="0,6.42328134384629" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,4.11654410075916"
-                    Point2="0,8.11654410075916"
-                    Point3="-4,8.11654410075916" />
+                    Point1="0,6.42328134384629"
+                    Point2="0,10.4232813438463"
+                    Point3="-4,10.4232813438463" />
                   <mssgle:LineSegment
-                    End="-107.990476526513,8.11654410075916" />
+                    End="-108.023809859846,10.4232813438463" />
                   <mssgle:CubicBezierSegment
-                    Point1="-107.990476526513,8.11654410075916"
-                    Point2="-111.990476526513,8.11654410075916"
-                    Point3="-111.990476526513,12.1165441007592" />
+                    Point1="-108.023809859846,10.4232813438463"
+                    Point2="-112.023809859846,10.4232813438463"
+                    Point3="-112.023809859846,14.4232813438463" />
                   <mssgle:LineSegment
-                    End="-111.990476526513,22.7823528781687" />
+                    End="-112.023809859846,31.3823528781682" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6437,24 +7853,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="255.714286258634,367.211764402239">
+          TopLeft="330.214286258634,388.411764402239">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35.9619050842564,33.4941175994679"
+              EndConnector="-120.59523841759,25.294117599468"
               Start="0,0"
-              End="-35.9619050842564,25.9941175994679">
+              End="-120.59523841759,17.794117599468">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-31.9619050842564,0" />
+                    End="0,11.0389713926622" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31.9619050842564,0"
-                    Point2="-35.9619050842564,0"
-                    Point3="-35.9619050842564,4" />
+                    Point1="0,11.0389713926622"
+                    Point2="0,15.0389713926622"
+                    Point3="-4,15.0389713926622" />
                   <mssgle:LineSegment
-                    End="-35.9619050842564,25.9941175994679" />
+                    End="-116.59523841759,15.0389713926622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.59523841759,15.0389713926622"
+                    Point2="-120.59523841759,15.0389713926622"
+                    Point3="-120.59523841759,19.0389713926622" />
+                  <mssgle:LineSegment
+                    End="-120.59523841759,17.794117599468" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6561,30 +7983,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="273.914286162841,178.482352821193">
+          TopLeft="273.714286162841,178.882352821193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-109.895238321797,222.223529180513"
+              EndConnector="-119.761904988463,234.823529180514"
               Start="0,0"
-              End="-109.895238321797,214.723529180513">
+              End="-119.761904988463,227.323529180514">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,128.127473910948" />
+                    End="0,135.617613612423" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,128.127473910948"
-                    Point2="0,132.127473910948"
-                    Point3="-4,132.127473910948" />
+                    Point1="0,135.617613612423"
+                    Point2="0,139.617613612423"
+                    Point3="-4,139.617613612423" />
                   <mssgle:LineSegment
-                    End="-105.895238321797,132.127473910948" />
+                    End="-115.761904988463,139.617613612423" />
                   <mssgle:CubicBezierSegment
-                    Point1="-105.895238321797,132.127473910948"
-                    Point2="-109.895238321797,132.127473910948"
-                    Point3="-109.895238321797,136.127473910948" />
+                    Point1="-115.761904988463,139.617613612423"
+                    Point2="-119.761904988463,139.617613612423"
+                    Point3="-119.761904988463,143.617613612423" />
                   <mssgle:LineSegment
-                    End="-109.895238321797,214.723529180513" />
+                    End="-119.761904988463,227.323529180514" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6673,30 +8095,24 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="423.171429324088,324.54117622258">
+          TopLeft="492.571429324088,303.94117622258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.628571633843,29.517646996486"
+              EndConnector="48.428571633843,39.117646996486"
               Start="0,0"
-              End="105.628571633843,22.017646996486">
+              End="48.428571633843,31.617646996486">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.758823498243" />
+                    End="44.428571633843,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.758823498243"
-                    Point2="0,14.758823498243"
-                    Point3="4,14.758823498243" />
+                    Point1="44.428571633843,0"
+                    Point2="48.428571633843,0"
+                    Point3="48.428571633843,4" />
                   <mssgle:LineSegment
-                    End="101.628571633843,14.758823498243" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.628571633843,14.758823498243"
-                    Point2="105.628571633843,14.758823498243"
-                    Point3="105.628571633843,18.758823498243" />
-                  <mssgle:LineSegment
-                    End="105.628571633843,22.017646996486" />
+                    End="48.428571633843,31.617646996486" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6712,23 +8128,23 @@
     design-time-name="Package\Load Consignor">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
+          Size="138,42"
           Id="Package\Load Consignor\Excel Source"
           TopLeft="11.4285714528999,21.4117646871141" />
         <NodeLayout
-          Size="274.4,41.6"
+          Size="274,42"
           Id="Package\Load Consignor\Replace NULLS in Discount column with 0"
           TopLeft="15.0000000319311,98.6470587370611" />
         <NodeLayout
-          Size="252.8,41.6"
+          Size="253,42"
           Id="Package\Load Consignor\Check and fix unrealistic big discount"
           TopLeft="152.142857466729,176.835293981578" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load Consignor\OLE DB Destination"
-          TopLeft="400.7142865673,324.999999715124" />
+          TopLeft="363.7142865673,326.999999715124" />
         <EdgeLayout
           Id="Package\Load Consignor.Paths[Derived Column Output]"
           TopLeft="152.200000031931,140.247058737061">
@@ -6760,9 +8176,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6796,45 +8210,41 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Consignor.Paths[Derived Column Output1]"
-          TopLeft="278.542857466729,218.435293981578">
+          TopLeft="278.642857466729,218.835293981578">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="207.371429100571,106.564705733547"
+              EndConnector="170.071429100571,108.164705733546"
               Start="0,0"
-              End="207.371429100571,99.0647057335466">
+              End="170.071429100571,100.664705733546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.2823528667733" />
+                    End="0,50.082352866773" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.2823528667733"
-                    Point2="0,53.2823528667733"
-                    Point3="4,53.2823528667733" />
+                    Point1="0,50.082352866773"
+                    Point2="0,54.082352866773"
+                    Point3="4,54.082352866773" />
                   <mssgle:LineSegment
-                    End="203.371429100571,53.2823528667733" />
+                    End="166.071429100571,54.082352866773" />
                   <mssgle:CubicBezierSegment
-                    Point1="203.371429100571,53.2823528667733"
-                    Point2="207.371429100571,53.2823528667733"
-                    Point3="207.371429100571,57.2823528667733" />
+                    Point1="166.071429100571,54.082352866773"
+                    Point2="170.071429100571,54.082352866773"
+                    Point3="170.071429100571,58.082352866773" />
                   <mssgle:LineSegment
-                    End="207.371429100571,99.0647057335466" />
+                    End="170.071429100571,100.664705733546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6880,47 +8290,13 @@
           Id="Package\Load Container\Flat File Source"
           TopLeft="226.999996617437,51.9999992251395" />
         <NodeLayout
-          Size="174,42"
-          Id="Package\Load Container\Remove empty rows"
-          TopLeft="277.999995857477,160.999997600913" />
-        <EdgeLayout
-          Id="Package\Load Container.Paths[Flat File Source Output]"
-          TopLeft="302.199996617437,93.5999992251395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="62.9999992400402,67.3999983757735"
-              Start="0,0"
-              End="62.9999992400402,59.8999983757735">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.6999991878868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.6999991878868"
-                    Point2="0,33.6999991878868"
-                    Point3="4,33.6999991878868" />
-                  <mssgle:LineSegment
-                    End="58.9999992400402,33.6999991878868" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.9999992400402,33.6999991878868"
-                    Point2="62.9999992400402,33.6999991878868"
-                    Point3="62.9999992400402,37.6999991878868" />
-                  <mssgle:LineSegment
-                    End="62.9999992400402,59.8999983757735" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="156,42"
           Id="Package\Load Container\Data Conversion"
           TopLeft="397,261" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load Container\Remove empty rows"
+          TopLeft="277.999995857477,160.999997600913" />
         <EdgeLayout
           Id="Package\Load Container.Paths[Remove all empty rows]"
           TopLeft="364.999995857477,202.999997600913">
@@ -6958,6 +8334,42 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Load Container.Paths[Flat File Source Output]"
+          TopLeft="302.199996617437,93.5999992251395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.9999992400402,67.3999983757735"
+              Start="0,0"
+              End="62.9999992400402,59.8999983757735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6999991878868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.6999991878868"
+                    Point2="0,33.6999991878868"
+                    Point3="4,33.6999991878868" />
+                  <mssgle:LineSegment
+                    End="58.9999992400402,33.6999991878868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.9999992400402,33.6999991878868"
+                    Point2="62.9999992400402,33.6999991878868"
+                    Point3="62.9999992400402,37.6999991878868" />
+                  <mssgle:LineSegment
+                    End="62.9999992400402,59.8999983757735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Load Container.Paths[Data Conversion Output]"
           TopLeft="475,303">
           <EdgeLayout.Curve>
@@ -6988,7 +8400,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7377,29 +8791,121 @@
     design-time-name="Package\Load ShipmentDetail">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load ShipmentDetail\OLE DB Source"
-          TopLeft="286.999995723367,174.999997392297" />
-        <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load ShipmentDetail\OLE DB Destination"
-          TopLeft="280.999995812774,321.999995201826" />
+          TopLeft="459.999995812774,343.999995201826" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Load ShipmentDetail\Calculate amount of containers"
+          TopLeft="253,225" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Load ShipmentDetail\Split ContainerNr column"
+          TopLeft="120,125" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load ShipmentDetail\OLE DB Source"
+          TopLeft="12.999995723367,11.999997392297" />
         <EdgeLayout
           Id="Package\Load ShipmentDetail.Paths[OLE DB Source Output]"
-          TopLeft="363.999995768071,216.599997392297">
+          TopLeft="87.999995723367,53.999997392297">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,105.399997809529"
+              EndConnector="130.000004276633,71.000002607703"
               Start="0,0"
-              End="0,97.899997809529">
+              End="130.000004276633,63.500002607703">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,97.899997809529" />
+                    End="0,31.5000013038515" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5000013038515"
+                    Point2="0,35.5000013038515"
+                    Point3="4,35.5000013038515" />
+                  <mssgle:LineSegment
+                    End="126.000004276633,35.5000013038515" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.000004276633,35.5000013038515"
+                    Point2="130.000004276633,35.5000013038515"
+                    Point3="130.000004276633,39.5000013038515" />
+                  <mssgle:LineSegment
+                    End="130.000004276633,63.500002607703" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ShipmentDetail.Paths[Derived Column Output1]"
+          TopLeft="365.5,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179.499995812774,76.999995201826"
+              Start="0,0"
+              End="179.499995812774,69.499995201826">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.499997600913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.499997600913"
+                    Point2="0,38.499997600913"
+                    Point3="4,38.499997600913" />
+                  <mssgle:LineSegment
+                    End="175.499995812774,38.499997600913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175.499995812774,38.499997600913"
+                    Point2="179.499995812774,38.499997600913"
+                    Point3="179.499995812774,42.499997600913" />
+                  <mssgle:LineSegment
+                    End="179.499995812774,69.499995201826" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load ShipmentDetail.Paths[Derived Column Output]"
+          TopLeft="218,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.5,58"
+              Start="0,0"
+              End="147.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="143.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.5,29"
+                    Point2="147.5,29"
+                    Point3="147.5,33" />
+                  <mssgle:LineSegment
+                    End="147.5,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7443,49 +8949,47 @@
     design-time-name="Package\Load Voyage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load Voyage\OLE DB Destination"
-          TopLeft="393.999994128943,358.999994650483" />
+          TopLeft="499.999994128943,361.999994650483" />
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load Voyage\OLE DB Source"
-          TopLeft="368.999994501472,192.999997124076" />
+          TopLeft="224.999994501472,115.999997124076" />
         <EdgeLayout
           Id="Package\Load Voyage.Paths[OLE DB Source Output]"
-          TopLeft="443.799994501472,234.599997124076">
+          TopLeft="299.999994501472,157.999997124076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.399999627471,124.399997526407"
+              EndConnector="284.999999627471,203.999997526407"
               Start="0,0"
-              End="35.399999627471,116.899997526407">
+              End="284.999999627471,196.499997526407">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.1999987632037" />
+                    End="0,97.9999987632035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,58.1999987632037"
-                    Point2="0,62.1999987632037"
-                    Point3="4,62.1999987632037" />
+                    Point1="0,97.9999987632035"
+                    Point2="0,101.999998763204"
+                    Point3="4,101.999998763204" />
                   <mssgle:LineSegment
-                    End="31.399999627471,62.1999987632037" />
+                    End="280.999999627471,101.999998763204" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.399999627471,62.1999987632037"
-                    Point2="35.399999627471,62.1999987632037"
-                    Point3="35.399999627471,66.1999987632037" />
+                    Point1="280.999999627471,101.999998763204"
+                    Point2="284.999999627471,101.999998763204"
+                    Point3="284.999999627471,105.999998763204" />
                   <mssgle:LineSegment
-                    End="35.399999627471,116.899997526407" />
+                    End="284.999999627471,196.499997526407" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7521,49 +9025,123 @@
     design-time-name="Package\Load VoyagePort">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load VoyagePort\OLE DB Source"
           TopLeft="75.9999988675118,36.9999994486571" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load VoyagePort\OLE DB Destination"
-          TopLeft="101.999998480082,167.999997496605" />
+          TopLeft="347.999998480082,325.999997496605" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Load VoyagePort\Data sort script"
+          TopLeft="254,130" />
         <EdgeLayout
           Id="Package\Load VoyagePort.Paths[OLE DB Source Output]"
-          TopLeft="150.799998867512,78.5999994486571">
+          TopLeft="150.999998867512,78.9999994486571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.3999996125698,89.3999980479479"
+              EndConnector="178.500001132488,51.0000005513429"
               Start="0,0"
-              End="36.3999996125698,81.8999980479479">
+              End="178.500001132488,43.5000005513429">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.6999990239739" />
+                    End="0,21.5000002756715" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.6999990239739"
-                    Point2="0,44.6999990239739"
-                    Point3="4,44.6999990239739" />
+                    Point1="0,21.5000002756715"
+                    Point2="0,25.5000002756715"
+                    Point3="4,25.5000002756715" />
                   <mssgle:LineSegment
-                    End="32.3999996125698,44.6999990239739" />
+                    End="174.500001132488,25.5000002756715" />
                   <mssgle:CubicBezierSegment
-                    Point1="32.3999996125698,44.6999990239739"
-                    Point2="36.3999996125698,44.6999990239739"
-                    Point3="36.3999996125698,48.6999990239739" />
+                    Point1="174.500001132488,25.5000002756715"
+                    Point2="178.500001132488,25.5000002756715"
+                    Point3="178.500001132488,29.5000002756715" />
                   <mssgle:LineSegment
-                    End="36.3999996125698,81.8999980479479" />
+                    End="178.500001132488,43.5000005513429" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Load VoyagePort\Sort Date"
+          TopLeft="328,210" />
+        <EdgeLayout
+          Id="Package\Load VoyagePort.Paths[Output 0]"
+          TopLeft="329.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,38"
+              Start="0,0"
+              End="60,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="56,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56,19"
+                    Point2="60,19"
+                    Point3="60,23" />
+                  <mssgle:LineSegment
+                    End="60,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load VoyagePort.Paths[Sort Output]"
+          TopLeft="389.5,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43.499998480082,73.999997496605"
+              Start="0,0"
+              End="43.499998480082,66.499997496605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9999987483025" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.9999987483025"
+                    Point2="0,36.9999987483025"
+                    Point3="4,36.9999987483025" />
+                  <mssgle:LineSegment
+                    End="39.499998480082,36.9999987483025" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.499998480082,36.9999987483025"
+                    Point2="43.499998480082,36.9999987483025"
+                    Point3="43.499998480082,40.9999987483025" />
+                  <mssgle:LineSegment
+                    End="43.499998480082,66.499997496605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

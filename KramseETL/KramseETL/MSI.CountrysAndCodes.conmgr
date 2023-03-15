@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MSI.CountrysAndCodes"
+  DTS:DTSID="{67634929-8F59-45E7-94D9-539180C87F36}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=MSI;Initial Catalog=CountrysAndCodes;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-KramseETL-{67634929-8F59-45E7-94D9-539180C87F36}MSI.CountrysAndCodes;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
