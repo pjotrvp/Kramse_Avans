@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{247A5EEE-379A-46FA-9FF2-29AFD00ACA5D}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{0A41C767-87E3-47BD-9341-1BCCBEE8517E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -590,167 +590,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Load Container\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input].Columns[Id]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Id"
-                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Id]" />
-                    <inputColumn
-                      refId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input].Columns[Length]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Length"
-                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Length]" />
-                    <inputColumn
-                      refId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input].Columns[Cubes]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Cubes"
-                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Cubes]" />
-                    <inputColumn
-                      refId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input].Columns[EuroPricePerKm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="EuroPricePerKm"
-                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[EuroPricePerKm]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
-                      name="Copy of Id"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Length]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Length]"
-                      name="Copy of Length"
-                      scale="3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Length]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cubes]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cubes]"
-                      name="Copy of Cubes"
-                      scale="3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Cubes]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]"
-                      name="Copy of EuroPricePerKm"
-                      scale="3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[EuroPricePerKm]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Container\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Load Container\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1012,6 +851,167 @@
               </outputs>
             </component>
             <component
+              refId="Package\Load Container\Id to int"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Id to int"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Container\Id to int.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Container\Id to int.Inputs[Data Conversion Input].Columns[Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Id"
+                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Load Container\Id to int.Inputs[Data Conversion Input].Columns[Length]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Length"
+                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Length]" />
+                    <inputColumn
+                      refId="Package\Load Container\Id to int.Inputs[Data Conversion Input].Columns[Cubes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cubes"
+                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Cubes]" />
+                    <inputColumn
+                      refId="Package\Load Container\Id to int.Inputs[Data Conversion Input].Columns[EuroPricePerKm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EuroPricePerKm"
+                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[EuroPricePerKm]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Container\Id to int.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Container\Id to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      name="Copy of Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Length]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Length]"
+                      name="Copy of Length"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Length]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Cubes]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Cubes]"
+                      name="Copy of Cubes"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Cubes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]"
+                      name="Copy of EuroPricePerKm"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[EuroPricePerKm]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Container\Id to int.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Container\Id to int.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Container\Id to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load Container\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1092,14 +1092,6 @@
                       externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                       lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[Type]" />
                     <inputColumn
-                      refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RefrigerationFlag]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="RefrigerationFlag"
-                      externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RefrigerationFlag]"
-                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[RefrigerationFlag]" />
-                    <inputColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PowerFlag]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1112,28 +1104,36 @@
                       cachedDataType="i4"
                       cachedName="Copy of Id"
                       externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]" />
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Id]" />
                     <inputColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Length]"
                       cachedDataType="decimal"
                       cachedName="Copy of Length"
                       cachedScale="3"
                       externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Length]"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Length]" />
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Length]" />
                     <inputColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Cubes]"
                       cachedDataType="decimal"
                       cachedName="Copy of Cubes"
                       cachedScale="3"
                       externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cubes]"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Cubes]" />
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of Cubes]" />
                     <inputColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of EuroPricePerKm]"
                       cachedDataType="decimal"
                       cachedName="Copy of EuroPricePerKm"
                       cachedScale="3"
                       externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EuroPricePerKm]"
-                      lineageId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]" />
+                      lineageId="Package\Load Container\Id to int.Outputs[Data Conversion Output].Columns[Copy of EuroPricePerKm]" />
+                    <inputColumn
+                      refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RefrigerationFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RefrigerationFlag"
+                      externalMetadataColumnId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RefrigerationFlag]"
+                      lineageId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output].Columns[RefrigerationFlag]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1310,7 +1310,7 @@
               refId="Package\Load Container.Paths[Data Conversion Output]"
               endId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Load Container\Data Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\Load Container\Id to int.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Load Container.Paths[Flat File Source Output]"
               endId="Package\Load Container\Remove empty rows.Inputs[Conditional Split Input]"
@@ -1318,7 +1318,7 @@
               startId="Package\Load Container\Flat File Source.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Load Container.Paths[Remove all empty rows]"
-              endId="Package\Load Container\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Load Container\Id to int.Inputs[Data Conversion Input]"
               name="Remove all empty rows"
               startId="Package\Load Container\Remove empty rows.Outputs[Remove all empty rows]" />
           </paths>
@@ -7746,7 +7746,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="151,42"
           Id="Package\Load Consignor"
-          TopLeft="40.7142858009557,133.05882341278" />
+          TopLeft="40.7142858009557,142.05882341278" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load Container"
@@ -7785,30 +7785,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TopLeft="462.000000957931,343.058823219066" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="228.304762327468,102.776470534612">
+          TopLeft="228.238095660802,103.176470534612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-111.990476526513,30.2823528781687"
+              EndConnector="-112.023809859846,38.8823528781682"
               Start="0,0"
-              End="-111.990476526513,22.7823528781687">
+              End="-112.023809859846,31.3823528781682">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,4.11654410075916" />
+                    End="0,6.42328134384629" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,4.11654410075916"
-                    Point2="0,8.11654410075916"
-                    Point3="-4,8.11654410075916" />
+                    Point1="0,6.42328134384629"
+                    Point2="0,10.4232813438463"
+                    Point3="-4,10.4232813438463" />
                   <mssgle:LineSegment
-                    End="-107.990476526513,8.11654410075916" />
+                    End="-108.023809859846,10.4232813438463" />
                   <mssgle:CubicBezierSegment
-                    Point1="-107.990476526513,8.11654410075916"
-                    Point2="-111.990476526513,8.11654410075916"
-                    Point3="-111.990476526513,12.1165441007592" />
+                    Point1="-108.023809859846,10.4232813438463"
+                    Point2="-112.023809859846,10.4232813438463"
+                    Point3="-112.023809859846,14.4232813438463" />
                   <mssgle:LineSegment
-                    End="-111.990476526513,22.7823528781687" />
+                    End="-112.023809859846,31.3823528781682" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8144,7 +8144,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="170,42"
           Id="Package\Load Consignor\OLE DB Destination"
-          TopLeft="363.7142865673,326.999999715124" />
+          TopLeft="378.7142865673,338.999999715124" />
         <EdgeLayout
           Id="Package\Load Consignor.Paths[Derived Column Output]"
           TopLeft="152.200000031931,140.247058737061">
@@ -8219,26 +8219,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="170.071429100571,108.164705733546"
+              EndConnector="185.071429100571,120.164705733546"
               Start="0,0"
-              End="170.071429100571,100.664705733546">
+              End="185.071429100571,112.664705733546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.082352866773" />
+                    End="0,56.082352866773" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.082352866773"
-                    Point2="0,54.082352866773"
-                    Point3="4,54.082352866773" />
+                    Point1="0,56.082352866773"
+                    Point2="0,60.082352866773"
+                    Point3="4,60.082352866773" />
                   <mssgle:LineSegment
-                    End="166.071429100571,54.082352866773" />
+                    End="181.071429100571,60.082352866773" />
                   <mssgle:CubicBezierSegment
-                    Point1="166.071429100571,54.082352866773"
-                    Point2="170.071429100571,54.082352866773"
-                    Point3="170.071429100571,58.082352866773" />
+                    Point1="181.071429100571,60.082352866773"
+                    Point2="185.071429100571,60.082352866773"
+                    Point3="185.071429100571,64.082352866773" />
                   <mssgle:LineSegment
-                    End="170.071429100571,100.664705733546" />
+                    End="185.071429100571,112.664705733546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8282,54 +8282,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="171,42"
           Id="Package\Load Container\OLE DB Destination"
-          TopLeft="422.99999500811,372.999995738268" />
+          TopLeft="766.99999500811,387.999995738268" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load Container\Flat File Source"
           TopLeft="226.999996617437,51.9999992251395" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Load Container\Data Conversion"
-          TopLeft="397,261" />
+          Size="117,42"
+          Id="Package\Load Container\Id to int"
+          TopLeft="559,170" />
         <NodeLayout
           Size="174,42"
           Id="Package\Load Container\Remove empty rows"
           TopLeft="277.999995857477,160.999997600913" />
         <EdgeLayout
           Id="Package\Load Container.Paths[Remove all empty rows]"
-          TopLeft="364.999995857477,202.999997600913">
+          TopLeft="451.999995857477,181.999997600913">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="110.000004142523,58.000002399087"
+              EndConnector="107.000004142523,9.00000239908701"
               Start="0,0"
-              End="110.000004142523,50.500002399087">
+              End="99.500004142523,9.00000239908701">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.0000011995435" />
+                    End="49.5000020712615,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.0000011995435"
-                    Point2="0,29.0000011995435"
-                    Point3="4,29.0000011995435" />
+                    Point1="49.5000020712615,0"
+                    Point2="53.5000020712615,0"
+                    Point3="53.5000020712615,4" />
                   <mssgle:LineSegment
-                    End="106.000004142523,29.0000011995435" />
+                    End="53.5000020712615,5.00000239908701" />
                   <mssgle:CubicBezierSegment
-                    Point1="106.000004142523,29.0000011995435"
-                    Point2="110.000004142523,29.0000011995435"
-                    Point3="110.000004142523,33.0000011995435" />
+                    Point1="53.5000020712615,5.00000239908701"
+                    Point2="53.5000020712615,9.00000239908701"
+                    Point3="57.5000020712615,9.00000239908701" />
                   <mssgle:LineSegment
-                    End="110.000004142523,50.500002399087" />
+                    End="99.500004142523,9.00000239908701" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.87242394626148,34.0000011995435,104.25515625,11.609375"
+              BoundingBox="1.37242394626148,-17.609375,104.25515625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8364,45 +8364,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Container.Paths[Data Conversion Output]"
-          TopLeft="475,303">
+          TopLeft="617.5,212">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.99999500811,69.999995738268"
+              EndConnector="234.99999500811,175.999995738268"
               Start="0,0"
-              End="32.99999500811,62.499995738268">
+              End="234.99999500811,168.499995738268">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.999997869134" />
+                    End="0,83.999997869134" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.999997869134"
-                    Point2="0,34.999997869134"
-                    Point3="4,34.999997869134" />
+                    Point1="0,83.999997869134"
+                    Point2="0,87.999997869134"
+                    Point3="4,87.999997869134" />
                   <mssgle:LineSegment
-                    End="28.99999500811,34.999997869134" />
+                    End="230.99999500811,87.999997869134" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.99999500811,34.999997869134"
-                    Point2="32.99999500811,34.999997869134"
-                    Point3="32.99999500811,38.999997869134" />
+                    Point1="230.99999500811,87.999997869134"
+                    Point2="234.99999500811,87.999997869134"
+                    Point3="234.99999500811,91.999997869134" />
                   <mssgle:LineSegment
-                    End="32.99999500811,62.499995738268" />
+                    End="234.99999500811,168.499995738268" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8647,13 +8643,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Load Ship">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load Ship\OLE DB Source"
           TopLeft="342.999994888902,263.999996066094" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load Ship\OLE DB Destination"
           TopLeft="419.999993741512,403.999993979931" />
         <EdgeLayout
@@ -8687,9 +8683,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8949,7 +8943,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Load Voyage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170,42"
           Id="Package\Load Voyage\OLE DB Destination"
@@ -8989,7 +8983,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9025,7 +9021,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Load VoyagePort">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Load VoyagePort\Sort Date"
+          TopLeft="328,210" />
         <NodeLayout
           Size="150,42"
           Id="Package\Load VoyagePort\OLE DB Source"
@@ -9038,78 +9038,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="151,42"
           Id="Package\Load VoyagePort\Data sort script"
           TopLeft="254,130" />
-        <EdgeLayout
-          Id="Package\Load VoyagePort.Paths[OLE DB Source Output]"
-          TopLeft="150.999998867512,78.9999994486571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="178.500001132488,51.0000005513429"
-              Start="0,0"
-              End="178.500001132488,43.5000005513429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5000002756715" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5000002756715"
-                    Point2="0,25.5000002756715"
-                    Point3="4,25.5000002756715" />
-                  <mssgle:LineSegment
-                    End="174.500001132488,25.5000002756715" />
-                  <mssgle:CubicBezierSegment
-                    Point1="174.500001132488,25.5000002756715"
-                    Point2="178.500001132488,25.5000002756715"
-                    Point3="178.500001132488,29.5000002756715" />
-                  <mssgle:LineSegment
-                    End="178.500001132488,43.5000005513429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Load VoyagePort\Sort Date"
-          TopLeft="328,210" />
-        <EdgeLayout
-          Id="Package\Load VoyagePort.Paths[Output 0]"
-          TopLeft="329.5,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60,38"
-              Start="0,0"
-              End="60,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="56,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56,19"
-                    Point2="60,19"
-                    Point3="60,23" />
-                  <mssgle:LineSegment
-                    End="60,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load VoyagePort.Paths[Sort Output]"
           TopLeft="389.5,252">
@@ -9141,14 +9069,88 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load VoyagePort.Paths[Output 0]"
+          TopLeft="329.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,38"
+              Start="0,0"
+              End="60,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="56,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56,19"
+                    Point2="60,19"
+                    Point3="60,23" />
+                  <mssgle:LineSegment
+                    End="60,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load VoyagePort.Paths[OLE DB Source Output]"
+          TopLeft="150.999998867512,78.9999994486571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178.500001132488,51.0000005513429"
+              Start="0,0"
+              End="178.500001132488,43.5000005513429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5000002756715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5000002756715"
+                    Point2="0,25.5000002756715"
+                    Point3="4,25.5000002756715" />
+                  <mssgle:LineSegment
+                    End="174.500001132488,25.5000002756715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174.500001132488,25.5000002756715"
+                    Point2="178.500001132488,25.5000002756715"
+                    Point3="178.500001132488,29.5000002756715" />
+                  <mssgle:LineSegment
+                    End="178.500001132488,43.5000005513429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VoyagePort\OLE DB Destination">
+    design-time-name="Package\Load VoyagePort\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9161,7 +9163,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VoyagePort\OLE DB Source">
+    design-time-name="Package\Load VoyagePort\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

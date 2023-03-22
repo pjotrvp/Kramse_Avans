@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="RawToERP"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{9A044300-01D1-4081-8DF5-1612FED4C275}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{10F20B5F-C02B-4148-A33E-FBDA7766A5E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -572,21 +572,15 @@
                       name="PowerFlag" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Length]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="Length" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cubes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="Cubes" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EuroPricePerKm]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="EuroPricePerKm" />
                   </externalMetadataColumns>
                 </input>
@@ -779,21 +773,15 @@
                       name="PowerFlag" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Length]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="Length" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cubes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="Cubes" />
                     <externalMetadataColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EuroPricePerKm]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       name="EuroPricePerKm" />
                   </externalMetadataColumns>
                 </output>
@@ -830,23 +818,17 @@
                       name="PowerFlag" />
                     <outputColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Length]"
                       name="Length" />
                     <outputColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cubes]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cubes]"
                       name="Cubes" />
                     <outputColumn
                       refId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EuroPricePerKm]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="r8"
                       lineageId="Package\Load Container\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EuroPricePerKm]"
                       name="EuroPricePerKm" />
                     <outputColumn
@@ -4780,11 +4762,23 @@
                       externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainertypeId]"
                       lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainertypeId]" />
                     <inputColumn
-                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShipmentDetail_Row_Id]"
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContainerFirst]"
                       cachedDataType="i4"
-                      cachedName="ShipmentDetail_Row_Id"
-                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipmentDetail_Row_Id]"
-                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipmentDetail_Row_Id]" />
+                      cachedName="ContainerFirst"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerFirst]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerFirst]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContainerLast]"
+                      cachedDataType="i4"
+                      cachedName="ContainerLast"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerLast]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerLast]" />
+                    <inputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContAmount]"
+                      cachedDataType="i4"
+                      cachedName="ContAmount"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerAmount]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContAmount]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4806,9 +4800,17 @@
                       dataType="i4"
                       name="ContainertypeId" />
                     <externalMetadataColumn
-                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipmentDetail_Row_Id]"
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerFirst]"
                       dataType="i4"
-                      name="ShipmentDetail_Row_Id" />
+                      name="ContainerFirst" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerLast]"
+                      dataType="i4"
+                      name="ContainerLast" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContainerAmount]"
+                      dataType="i4"
+                      name="ContainerAmount" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4936,13 +4938,31 @@
                       name="ContainertypeId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipmentDetail_Row_Id]"
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerFirst]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipmentDetail_Row_Id]"
-                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShipmentDetail_Row_Id]"
-                      name="ShipmentDetail_Row_Id"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContainerFirst]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerFirst]"
+                      name="ContainerFirst"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerLast]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContainerLast]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContainerLast]"
+                      name="ContainerLast"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContAmount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContAmount]"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContAmount]"
+                      name="ContAmount"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -4965,9 +4985,17 @@
                       dataType="i4"
                       name="ContainertypeId" />
                     <externalMetadataColumn
-                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShipmentDetail_Row_Id]"
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContainerFirst]"
                       dataType="i4"
-                      name="ShipmentDetail_Row_Id" />
+                      name="ContainerFirst" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContainerLast]"
+                      dataType="i4"
+                      name="ContainerLast" />
+                    <externalMetadataColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ContAmount]"
+                      dataType="i4"
+                      name="ContAmount" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4997,10 +5025,20 @@
                       lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContainertypeId]"
                       name="ContainertypeId" />
                     <outputColumn
-                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipmentDetail_Row_Id]"
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContainerFirst]"
                       dataType="i4"
-                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ShipmentDetail_Row_Id]"
-                      name="ShipmentDetail_Row_Id" />
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContainerFirst]"
+                      name="ContainerFirst" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContainerLast]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContainerLast]"
+                      name="ContainerLast" />
+                    <outputColumn
+                      refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContAmount]"
+                      dataType="i4"
+                      lineageId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ContAmount]"
+                      name="ContAmount" />
                     <outputColumn
                       refId="Package\Load ShipmentDetail\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -5906,13 +5944,49 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Execute SQL Task"
           TopLeft="360.714286482152,55.8235293628332" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Load Consignor"
           TopLeft="65.0000001383681,157.529411626625" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load Container"
+          TopLeft="533.571429707262,162.117646916721" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load Item"
+          TopLeft="237.857143363478,159.058823389991" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Load MRV"
+          TopLeft="717.857144385272,163.647058680086" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Load Port"
+          TopLeft="380.00000080892,240.117646848351" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Load Ship"
+          TopLeft="383.571429387951,159.823529271673" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Load Shipment"
+          TopLeft="287.857143469915,381.588234959641" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load ShipmentDetail"
+          TopLeft="175.000000372529,441.235293730887" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load Voyage"
+          TopLeft="377.142857945695,312.764705608203" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load VoyagePort"
+          TopLeft="482.857143885019,376.999999669545" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="390.447619815485,97.4235293628332">
@@ -5947,10 +6021,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\Load Item"
-          TopLeft="237.857143363478,159.058823389991" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="416.180953148819,97.4235293628332">
@@ -5977,268 +6047,6 @@
                     Point3="-115.12380978534,29.0149095759" />
                   <mssgle:LineSegment
                     End="-115.12380978534,54.1352940271574" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\Load Ship"
-          TopLeft="383.571429387951,159.823529271673" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="443.942857935052,97.4235293628332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.39999990884"
-              Start="0,0"
-              End="0,54.89999990884">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.89999990884" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load Container"
-          TopLeft="533.571429707262,162.117646916721" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="467.647619815485,97.4235293628332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="140.723809891777,64.6941175538879"
-              Start="0,0"
-              End="140.723809891777,57.1941175538879">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.2563442950413" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.2563442950413"
-                    Point2="0,26.2563442950413"
-                    Point3="4,26.2563442950413" />
-                  <mssgle:LineSegment
-                    End="136.723809891777,26.2563442950413" />
-                  <mssgle:CubicBezierSegment
-                    Point1="136.723809891777,26.2563442950413"
-                    Point2="140.723809891777,26.2563442950413"
-                    Point3="140.723809891777,30.2563442950413" />
-                  <mssgle:LineSegment
-                    End="140.723809891777,57.1941175538879" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="125.6,41.6"
-          Id="Package\Load MRV"
-          TopLeft="717.857144385272,163.647058680086" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="493.380953148819,97.4235293628332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="287.276191236454,66.2235293172533"
-              Start="0,0"
-              End="287.276191236454,58.7235293172533">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.7498161511388" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.7498161511388"
-                    Point2="0,17.7498161511388"
-                    Point3="4,17.7498161511388" />
-                  <mssgle:LineSegment
-                    End="283.276191236454,17.7498161511388" />
-                  <mssgle:CubicBezierSegment
-                    Point1="283.276191236454,17.7498161511388"
-                    Point2="287.276191236454,17.7498161511388"
-                    Point3="287.276191236454,21.7498161511388" />
-                  <mssgle:LineSegment
-                    End="287.276191236454,58.7235293172533" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\Load Port"
-          TopLeft="380.00000080892,240.117646848351" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="443.785715098436,201.423529271673">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.6941175766778"
-              Start="0,0"
-              End="0,31.1941175766778">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.1941175766778" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\Load Voyage"
-          TopLeft="377.142857945695,312.764705608203" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="444.171429377308,281.717646848351">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.0470587598516"
-              Start="0,0"
-              End="0,23.5470587598516">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5470587598516" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Load VoyagePort"
-          TopLeft="482.857143885019,376.999999669545" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="446.742857945695,354.364705608203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.914285939324,22.6352940613422"
-              Start="0,0"
-              End="114.914285939324,15.1352940613422">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.31764703067111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.31764703067111"
-                    Point2="0,11.3176470306711"
-                    Point3="4,11.3176470306711" />
-                  <mssgle:LineSegment
-                    End="110.914285939324,11.3176470306711" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.914285939324,11.3176470306711"
-                    Point2="114.914285939324,11.3176470306711"
-                    Point3="114.914285939324,15.3176470306711" />
-                  <mssgle:LineSegment
-                    End="114.914285939324,15.1352940613422" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Load Shipment"
-          TopLeft="287.857143469915,381.588234959641" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="424.876191279029,354.364705608203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-62.6190478091137,27.2235293514382"
-              Start="0,0"
-              End="-62.6190478091137,19.7235293514382">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.07502671342598" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.07502671342598"
-                    Point2="0,11.075026713426"
-                    Point3="-4,11.075026713426" />
-                  <mssgle:LineSegment
-                    End="-58.6190478091137,11.075026713426" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58.6190478091137,11.075026713426"
-                    Point2="-62.6190478091137,11.075026713426"
-                    Point3="-62.6190478091137,15.075026713426" />
-                  <mssgle:LineSegment
-                    End="-62.6190478091137,19.7235293514382" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Load ShipmentDetail"
-          TopLeft="175.000000372529,441.235293730887" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="287.857143469915,402.388234959641">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25.257143097386,38.8470587712465"
-              Start="0,0"
-              End="-25.257143097386,31.3470587712465">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-21.257143097386,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.257143097386,0"
-                    Point2="-25.257143097386,0"
-                    Point3="-25.257143097386,4" />
-                  <mssgle:LineSegment
-                    End="-25.257143097386,31.3470587712465" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6281,6 +6089,236 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="443.942857935052,97.4235293628332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.39999990884"
+              Start="0,0"
+              End="0,54.89999990884">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.89999990884" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="467.380953148819,97.8235293628332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.190476558443,64.2941175538878"
+              Start="0,0"
+              End="141.190476558443,56.7941175538878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0949230169813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0949230169813"
+                    Point2="0,26.0949230169813"
+                    Point3="4,26.0949230169813" />
+                  <mssgle:LineSegment
+                    End="137.190476558443,26.0949230169813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.190476558443,26.0949230169813"
+                    Point2="141.190476558443,26.0949230169813"
+                    Point3="141.190476558443,30.0949230169813" />
+                  <mssgle:LineSegment
+                    End="141.190476558443,56.7941175538878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="493.380953148819,97.4235293628332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="287.276191236454,66.2235293172533"
+              Start="0,0"
+              End="287.276191236454,58.7235293172533">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7498161511388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7498161511388"
+                    Point2="0,17.7498161511388"
+                    Point3="4,17.7498161511388" />
+                  <mssgle:LineSegment
+                    End="283.276191236454,17.7498161511388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="283.276191236454,17.7498161511388"
+                    Point2="287.276191236454,17.7498161511388"
+                    Point3="287.276191236454,21.7498161511388" />
+                  <mssgle:LineSegment
+                    End="287.276191236454,58.7235293172533" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="443.785715098436,201.423529271673">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6941175766778"
+              Start="0,0"
+              End="0,31.1941175766778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1941175766778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="444.171429377308,281.717646848351">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.0470587598516"
+              Start="0,0"
+              End="0,23.5470587598516">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5470587598516" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="446.742857945695,354.364705608203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.914285939324,22.6352940613422"
+              Start="0,0"
+              End="114.914285939324,15.1352940613422">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.31764703067111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.31764703067111"
+                    Point2="0,11.3176470306711"
+                    Point3="4,11.3176470306711" />
+                  <mssgle:LineSegment
+                    End="110.914285939324,11.3176470306711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.914285939324,11.3176470306711"
+                    Point2="114.914285939324,11.3176470306711"
+                    Point3="114.914285939324,15.3176470306711" />
+                  <mssgle:LineSegment
+                    End="114.914285939324,15.1352940613422" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="424.876191279029,354.364705608203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.6190478091137,27.2235293514382"
+              Start="0,0"
+              End="-62.6190478091137,19.7235293514382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.07502671342598" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.07502671342598"
+                    Point2="0,11.075026713426"
+                    Point3="-4,11.075026713426" />
+                  <mssgle:LineSegment
+                    End="-58.6190478091137,11.075026713426" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.6190478091137,11.075026713426"
+                    Point2="-62.6190478091137,11.075026713426"
+                    Point3="-62.6190478091137,15.075026713426" />
+                  <mssgle:LineSegment
+                    End="-62.6190478091137,19.7235293514382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="287.857143469915,402.388234959641">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.257143097386,38.8470587712465"
+              Start="0,0"
+              End="-25.257143097386,31.3470587712465">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-21.257143097386,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.257143097386,0"
+                    Point2="-25.257143097386,0"
+                    Point3="-25.257143097386,4" />
+                  <mssgle:LineSegment
+                    End="-25.257143097386,31.3470587712465" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6288,15 +6326,15 @@
     design-time-name="Package\Load Consignor">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load Consignor\OLE DB Source"
-          TopLeft="13.5714286003185,15.2941176336529" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Load Consignor\OLE DB Destination"
           TopLeft="6.42857144225614,162.117646916721" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load Consignor\OLE DB Source"
+          TopLeft="13.5714286003185,15.2941176336529" />
         <EdgeLayout
           Id="Package\Load Consignor.Paths[OLE DB Source Output]"
           TopLeft="90.0000000212873,56.8941176336529">
@@ -6316,25 +6354,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Consignor\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Consignor\OLE DB Destination">
     <Properties>
@@ -6348,123 +6375,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Item">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load Item\OLE DB Source"
-          TopLeft="331.999995052815,139.999997913837" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Load Item\OLE DB Destination"
-          TopLeft="316.999995276332,292.99999563396" />
-        <EdgeLayout
-          Id="Package\Load Item.Paths[OLE DB Source Output]"
-          TopLeft="404.499995164573,181.599997913837">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,111.399997720122"
-              Start="0,0"
-              End="0,103.899997720122">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,103.899997720122" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Item\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Item\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Ship">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load Ship\OLE DB Source"
-          TopLeft="82.9999987632036,38.9999994188547" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Load Ship\OLE DB Destination"
-          TopLeft="75.9999988675118,215.999996781349" />
-        <EdgeLayout
-          Id="Package\Load Ship.Paths[OLE DB Source Output]"
-          TopLeft="159.499998815358,80.5999994188547">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,135.399997362495"
-              Start="0,0"
-              End="0,127.899997362495">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,127.899997362495" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Ship\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Ship\OLE DB Destination">
+    design-time-name="Package\Load Consignor\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6482,11 +6394,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load Container\OLE DB Source"
           TopLeft="58.9999991208315,31.9999995231628" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load Container\OLE DB Destination"
           TopLeft="71.9999989271164,183.999997258186" />
         <EdgeLayout
@@ -6527,7 +6439,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Container\OLE DB Source">
+    design-time-name="Package\Load Container\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6540,7 +6452,73 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Container\OLE DB Destination">
+    design-time-name="Package\Load Container\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Item">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load Item\OLE DB Source"
+          TopLeft="331.999995052815,139.999997913837" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Item\OLE DB Destination"
+          TopLeft="316.999995276332,292.99999563396" />
+        <EdgeLayout
+          Id="Package\Load Item.Paths[OLE DB Source Output]"
+          TopLeft="404.499995164573,181.599997913837">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,111.399997720122"
+              Start="0,0"
+              End="0,103.899997720122">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103.899997720122" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Item\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Item\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6556,7 +6534,7 @@
     design-time-name="Package\Load MRV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Load MRV\OLE DB Source"
@@ -6584,14 +6562,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load MRV\OLE DB Source">
+    design-time-name="Package\Load MRV\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6604,7 +6584,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load MRV\OLE DB Destination">
+    design-time-name="Package\Load MRV\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6620,7 +6600,7 @@
     design-time-name="Package\Load Port">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Load Port\OLE DB Source"
@@ -6648,25 +6628,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Port\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Port\OLE DB Destination">
     <Properties>
@@ -6680,71 +6649,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Voyage">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load Voyage\OLE DB Source"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Load Voyage\OLE DB Destination"
-          TopLeft="14.5000003129244,134.499998524785" />
-        <EdgeLayout
-          Id="Package\Load Voyage.Paths[OLE DB Source Output]"
-          TopLeft="80.3,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.4000003129244,87.399998524785"
-              Start="0,0"
-              End="19.4000003129244,79.899998524785">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.6999992623925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.6999992623925"
-                    Point2="0,43.6999992623925"
-                    Point3="4,43.6999992623925" />
-                  <mssgle:LineSegment
-                    End="15.4000003129244,43.6999992623925" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.4000003129244,43.6999992623925"
-                    Point2="19.4000003129244,43.6999992623925"
-                    Point3="19.4000003129244,47.6999992623925" />
-                  <mssgle:LineSegment
-                    End="19.4000003129244,79.899998524785" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Voyage\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Voyage\OLE DB Destination">
+    design-time-name="Package\Load Port\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6757,57 +6663,47 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Load VoyagePort">
+    design-time-name="Package\Load Ship">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
-          Id="Package\Load VoyagePort\OLE DB Source"
-          TopLeft="24.999999627471,38.9999994188547" />
+          Id="Package\Load Ship\OLE DB Source"
+          TopLeft="82.9999987632036,38.9999994188547" />
         <NodeLayout
           Size="170.4,41.6"
-          Id="Package\Load VoyagePort\OLE DB Destination"
-          TopLeft="59.9999991059303,149.999997764826" />
+          Id="Package\Load Ship\OLE DB Destination"
+          TopLeft="75.9999988675118,215.999996781349" />
         <EdgeLayout
-          Id="Package\Load VoyagePort.Paths[OLE DB Source Output]"
-          TopLeft="99.799999627471,80.5999994188547">
+          Id="Package\Load Ship.Paths[OLE DB Source Output]"
+          TopLeft="159.499998815358,80.5999994188547">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.3999994784594,69.3999983459711"
+              EndConnector="0,135.399997362495"
               Start="0,0"
-              End="45.3999994784594,61.8999983459711">
+              End="0,127.899997362495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.6999991729856" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.6999991729856"
-                    Point2="0,34.6999991729856"
-                    Point3="4,34.6999991729856" />
-                  <mssgle:LineSegment
-                    End="41.3999994784594,34.6999991729856" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.3999994784594,34.6999991729856"
-                    Point2="45.3999994784594,34.6999991729856"
-                    Point3="45.3999994784594,38.6999991729856" />
-                  <mssgle:LineSegment
-                    End="45.3999994784594,61.8999983459711" />
+                    End="0,127.899997362495" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VoyagePort\OLE DB Source">
+    design-time-name="Package\Load Ship\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6820,7 +6716,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VoyagePort\OLE DB Destination">
+    design-time-name="Package\Load Ship\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6836,7 +6732,7 @@
     design-time-name="Package\Load Shipment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Load Shipment\OLE DB Source"
@@ -6876,14 +6772,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Shipment\OLE DB Source">
+    design-time-name="Package\Load Shipment\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6896,7 +6794,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Shipment\OLE DB Destination">
+    design-time-name="Package\Load Shipment\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6914,27 +6812,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Load ShipmentDetail\OLE DB Source"
-          TopLeft="126.999998107553,62.9999990612269" />
-        <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load ShipmentDetail\OLE DB Destination"
           TopLeft="109.999998360872,173.999997407198" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load ShipmentDetail\OLE DB Source"
+          TopLeft="106.999998107553,49.9999990612269" />
         <EdgeLayout
           Id="Package\Load ShipmentDetail.Paths[OLE DB Source Output]"
-          TopLeft="198.499998234212,104.599999061227">
+          TopLeft="181.999998107553,91.9999990612269">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.3999983459711"
+              EndConnector="13.000000253319,81.9999983459711"
               Start="0,0"
-              End="0,61.8999983459711">
+              End="13.000000253319,74.4999983459711">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.8999983459711" />
+                    End="0,36.9999991729856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.9999991729856"
+                    Point2="0,40.9999991729856"
+                    Point3="4,40.9999991729856" />
+                  <mssgle:LineSegment
+                    End="9.000000253319,40.9999991729856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.000000253319,40.9999991729856"
+                    Point2="13.000000253319,40.9999991729856"
+                    Point3="13.000000253319,44.9999991729856" />
+                  <mssgle:LineSegment
+                    End="13.000000253319,74.4999983459711" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6946,6 +6856,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ShipmentDetail\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load ShipmentDetail\OLE DB Source">
     <Properties>
@@ -6959,8 +6882,151 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Voyage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Voyage\OLE DB Destination"
+          TopLeft="14.5000003129244,134.499998524785" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load Voyage\OLE DB Source"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Load Voyage.Paths[OLE DB Source Output]"
+          TopLeft="80.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.4000003129244,87.399998524785"
+              Start="0,0"
+              End="19.4000003129244,79.899998524785">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.6999992623925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.6999992623925"
+                    Point2="0,43.6999992623925"
+                    Point3="4,43.6999992623925" />
+                  <mssgle:LineSegment
+                    End="15.4000003129244,43.6999992623925" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.4000003129244,43.6999992623925"
+                    Point2="19.4000003129244,43.6999992623925"
+                    Point3="19.4000003129244,47.6999992623925" />
+                  <mssgle:LineSegment
+                    End="19.4000003129244,79.899998524785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load ShipmentDetail\OLE DB Destination">
+    design-time-name="Package\Load Voyage\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Voyage\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load VoyagePort">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Load VoyagePort\OLE DB Source"
+          TopLeft="24.999999627471,38.9999994188547" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load VoyagePort\OLE DB Destination"
+          TopLeft="59.9999991059303,149.999997764826" />
+        <EdgeLayout
+          Id="Package\Load VoyagePort.Paths[OLE DB Source Output]"
+          TopLeft="99.799999627471,80.5999994188547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.3999994784594,69.3999983459711"
+              Start="0,0"
+              End="45.3999994784594,61.8999983459711">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6999991729856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6999991729856"
+                    Point2="0,34.6999991729856"
+                    Point3="4,34.6999991729856" />
+                  <mssgle:LineSegment
+                    End="41.3999994784594,34.6999991729856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.3999994784594,34.6999991729856"
+                    Point2="45.3999994784594,34.6999991729856"
+                    Point3="45.3999994784594,38.6999991729856" />
+                  <mssgle:LineSegment
+                    End="45.3999994784594,61.8999983459711" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VoyagePort\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VoyagePort\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
