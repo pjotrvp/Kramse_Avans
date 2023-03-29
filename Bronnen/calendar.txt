@@ -1,0 +1,101 @@
+CREATE TABLE ODS.dbo.D_Calendar (
+    CALENDAR_ID INT PRIMARY KEY,
+    CALDAY DATE,
+    DAY_OF_MONTH INT,
+    CALYEAR INT,
+    CALMONTH_ISO CHAR(2),
+    CALMONTH_NAME VARCHAR(20),
+    CALMONTH_NR INT,
+    CALMONTH_NR_OF_DAYS INT,
+    CALMONTH_FIRST_DAY DATE,
+    CALMONTH_LAST_DAY DATE,
+    CALQUARTER INT,
+    WEEKDAY_NR INT,
+    WEEKDAY_NAME VARCHAR(20),
+    CALWEEK_ISO CHAR(2),
+    CALWEEK_ISO_LONG VARCHAR(7),
+    CALWEEK_ISO_YEAR INT,
+    CALWEEK_ISO_FIRST_DAY DATE,
+    CALWEEK_ISO_LAST_DAY DATE,
+    CALWEEK_ISO_WEEKDAY_MONTH_SPLIT INT,
+    IS_FIRST_DAY_OF_WEEK_YN CHAR(1),
+    IS_LAST_DAY_OF_WEEK_YN CHAR(1),
+    IS_FIRST_DAY_OF_MONTH_YN CHAR(1),
+    IS_LAST_DAY_OF_MONTH_YN CHAR(1)
+);
+
+DECLARE @StartDate DATE = '2010-01-01';
+DECLARE @EndDate DATE = '2018-12-31';
+DECLARE @CalendarID INT = 1;
+
+WHILE @StartDate <= @EndDate
+BEGIN
+    INSERT INTO ODS.dbo.D_Calendar (
+        CALENDAR_ID,
+        CALDAY,
+        DAY_OF_MONTH,
+        CALYEAR,
+        CALMONTH_ISO,
+        CALMONTH_NAME,
+        CALMONTH_NR,
+        CALMONTH_NR_OF_DAYS,
+        CALMONTH_FIRST_DAY,
+        CALMONTH_LAST_DAY,
+        CALQUARTER,
+        WEEKDAY_NR,
+        WEEKDAY_NAME,
+        CALWEEK_ISO,
+        CALWEEK_ISO_LONG,
+        CALWEEK_ISO_YEAR,
+        CALWEEK_ISO_FIRST_DAY,
+        CALWEEK_ISO_LAST_DAY,
+        CALWEEK_ISO_WEEKDAY_MONTH_SPLIT,
+        IS_FIRST_DAY_OF_WEEK_YN,
+        IS_LAST_DAY_OF_WEEK_YN,
+        IS_FIRST_DAY_OF_MONTH_YN,
+        IS_LAST_DAY_OF_MONTH_YN
+    )
+    VALUES (
+        @CalendarID,
+        @StartDate,
+        DAY(@StartDate),
+        YEAR(@StartDate),
+        RIGHT('0' + CAST(MONTH(@StartDate) AS VARCHAR(2)), 2),
+        DATENAME(MONTH, @StartDate),
+        MONTH(@StartDate),
+        DAY(EOMONTH(@StartDate)),
+        DATEFROMPARTS(YEAR(@StartDate), MONTH(@StartDate), 1),
+        EOMONTH(@StartDate),
+        CEILING(MONTH(@StartDate) / 3.0),
+        DATEPART(WEEKDAY, @StartDate),
+        DATENAME(WEEKDAY, @StartDate),
+        RIGHT('0' + CAST(DATEPART(ISO_WEEK, @StartDate) AS VARCHAR(2)), 2),
+        'W' + CAST(YEAR(@StartDate) AS VARCHAR(4)) + RIGHT('0' + CAST(DATEPART(ISO_WEEK, @StartDate) AS VARCHAR(2)), 2),
+        YEAR(@StartDate),
+        DATEADD(DAY, 1 - DATEPART(WEEKDAY, @StartDate), @StartDate),
+        DATEADD(DAY, 7 - DATEPART(WEEKDAY, @StartDate), @StartDate),
+        CASE
+            WHEN MONTH(@StartDate) <> MONTH(DATEADD(DAY, 7 - DATEPART(WEEKDAY, @StartDate), @StartDate)) THEN 1
+            ELSE 0
+        END,
+        CASE
+            WHEN DATEPART(WEEKDAY, @StartDate) = 1 THEN 'Y'
+            ELSE 'N'
+        END,
+        CASE
+            WHEN DATEPART(WEEKDAY, @StartDate) = 7 THEN 'Y'
+            ELSE 'N'
+        END,
+        CASE
+            WHEN DAY(@StartDate) = 1 THEN 'Y'
+            ELSE 'N'
+        END,
+        CASE
+            WHEN DAY(@StartDate) = DAY(EOMONTH(@StartDate)) THEN 'Y'
+            ELSE 'N'
+        END
+    );
+
+    SET @CalendarID += 1;
+    SET @StartDate = DATEADD(DAY, 1, @StartDate);
+END;

@@ -1,0 +1,992 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="225ce6b4-0e73-48b7-9633-9b96e28a7d68" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Pjotr Kramse ODS View</ID>
+  <Name>Pjotr Kramse ODS View</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="18" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1198" scrolltop="-1382" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="27559" y="19304" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Ship" left="9384" top="7313" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Ship" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Port" left="2899" top="13726" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3937" height="3387" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000610f00003b0d0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Port" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="T_StayDays" left="2751" top="8299" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="4233" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e000089100000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_T_StayDays" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="T_ShipmentVoyage" left="14784" top="6506" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00002010000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_T_ShipmentVoyage" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Consignor" left="15348" top="13906" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Consignor" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Calendar" left="20" top="899" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="6964" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000341b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Calendar" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Container" left="21312" top="6773" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3387" height="4466" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00003b0d000072110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Container" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Item" left="15324" top="0" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3048" height="4106" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e80b00000a100000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Item" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="12084" top="9414" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="1542" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Ship]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="19" destattachpoint="28" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="12384" y="9813" />
+              <point x="13584" y="9813" />
+              <point x="13584" y="10656" />
+              <point x="14784" y="10656" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6684" top="9414" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_StayDays_D_Ship]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="3" sourceattachpoint="18" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="9384" y="9813" />
+              <point x="8184" y="9813" />
+              <point x="8184" y="9812" />
+              <point x="6984" y="9812" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="4468" top="11026" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_StayDays_D_Port]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="3" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4867" y="13726" />
+              <point x="4867" y="11326" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3103" top="5400" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="2064" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_StayDays_D_Calendar]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="3" sourceattachpoint="13" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3502" y="5899" />
+              <point x="3502" y="7099" />
+              <point x="4867" y="7099" />
+              <point x="4867" y="8299" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="18612" top="8607" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Container]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="4" sourceattachpoint="16" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="21312" y="9006" />
+              <point x="18912" y="9006" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="16449" top="3607" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Item]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="4" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="16848" y="4106" />
+              <point x="16848" y="6506" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="16449" top="11206" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Consignor]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="16848" y="13906" />
+              <point x="16848" y="11506" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6684" top="3550" logicalid="16" controlid="16" masterid="0" hint1="0" hint2="0" width="8400" height="5756" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Calendar]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="37" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6984" y="3949" />
+              <point x="10884" y="3949" />
+              <point x="10884" y="9006" />
+              <point x="14784" y="9006" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6684" top="1900" logicalid="17" controlid="17" masterid="0" hint1="0" hint2="0" width="8400" height="5756" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_T_ShipmentVoyage_D_Calendar1]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="31" destattachpoint="16" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6984" y="2299" />
+              <point x="10884" y="2299" />
+              <point x="10884" y="7356" />
+              <point x="14784" y="7356" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1198</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1382</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="3d921cda-afb5-4e02-bb6e-e87379aef61c">
+      <ID>Leg Date Arrival Next</ID>
+      <Name>Leg Date Arrival Next</Name>
+      <DimensionID>D Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8186e806-d457-4cde-9053-14f0bdcb7714">
+          <AttributeID>CALDAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1bb32f17-6012-438b-bcde-a46cf5695463">
+          <AttributeID>DAY OF MONTH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5d903359-9502-4b3f-a184-d6534084ea8b">
+          <AttributeID>CALYEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2ab8dfcd-ef14-4f66-8f16-a4447be3108d">
+          <AttributeID>CALMONTH ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="386aa1bc-a91f-44ff-b40c-f7f009ec41fd">
+          <AttributeID>CALMONTH NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f9301104-f09d-449d-a71a-cfb8031a00e8">
+          <AttributeID>CALMONTH NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="59c7cda3-86dd-4659-8251-e5eecf9b8e83">
+          <AttributeID>CALMONTH NR OF DAYS</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9fd34014-68f3-4aa7-95ef-a6e34812dd5b">
+          <AttributeID>CALMONTH FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eeaf61cb-3bc7-450d-a8ab-7b7ec8d87e6d">
+          <AttributeID>CALMONTH LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9e7a1a4c-1c5a-4033-9300-5be1bfdc9a12">
+          <AttributeID>CALQUARTER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e65ddc1c-875e-4c08-b1e8-d88358ae04e0">
+          <AttributeID>WEEKDAY NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5c1f975f-66f1-406e-9922-49eab089fd0a">
+          <AttributeID>WEEKDAY NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8940de43-cafa-4eb9-bca7-c4ea873bb3e6">
+          <AttributeID>CALWEEK ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5d80608c-a7df-485e-b34d-decd532bf75d">
+          <AttributeID>CALWEEK ISO LONG</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e3f2b89f-443b-4a28-956a-1dafd42fe150">
+          <AttributeID>CALWEEK ISO YEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f995a071-b525-4c4d-88e8-7ef2d30b70ab">
+          <AttributeID>CALWEEK ISO FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cd3468ef-bae0-423d-ad45-ac8f9b656bce">
+          <AttributeID>CALWEEK ISO LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fb4976a6-2337-49d4-9b74-ab98a400d032">
+          <AttributeID>CALWEEK ISO WEEKDAY MONTH SPLIT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b06d5ee-eec5-4dbd-8ff0-477cd3fb8059">
+          <AttributeID>IS FIRST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0c0ecd34-76e0-47e8-a6c1-ad102d921291">
+          <AttributeID>IS LAST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="467fe78a-e9d0-4b98-8e05-9fc46548a8ea">
+          <AttributeID>IS FIRST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b7cc7a49-23d7-497d-a3ba-7b4430b51acd">
+          <AttributeID>IS LAST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="d264f7e4-0f52-4937-8a08-8ac6c2767f9b">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="d9e36863-7869-488e-b143-ea4f3bc6a1af">
+      <ID>Leg Date Depart Current</ID>
+      <Name>Leg Date Depart Current</Name>
+      <DimensionID>D Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="35675427-ee20-4643-be34-b9fec853fcf7">
+          <AttributeID>CALDAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5feced6d-7e46-4b59-aeef-b2d491a33d0b">
+          <AttributeID>DAY OF MONTH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="405ea035-a658-41bf-87c0-b95cdbfcfde5">
+          <AttributeID>CALYEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ff7331c8-d0a2-45c1-9c50-cbde7325bebb">
+          <AttributeID>CALMONTH ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0fd822f4-8a43-4947-9c22-3c84921e8483">
+          <AttributeID>CALMONTH NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="da44e4e8-81d6-48c1-a70b-b99aa1376c97">
+          <AttributeID>CALMONTH NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="49830b67-9350-43af-9e10-196f1cd58a97">
+          <AttributeID>CALMONTH NR OF DAYS</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bb0565f3-1ccc-4d10-9115-9e8a5aa90ac1">
+          <AttributeID>CALMONTH FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4464d5c7-feb3-4274-8fde-6ea8770ba72f">
+          <AttributeID>CALMONTH LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c023dfb9-437a-48e6-8091-e1bcdfc2d722">
+          <AttributeID>CALQUARTER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="802f507c-26c9-46ba-b132-b5503d01c67a">
+          <AttributeID>WEEKDAY NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2338e7bd-95d6-4182-af9c-07a0eb55d127">
+          <AttributeID>WEEKDAY NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="509f3fd3-e1f6-4e51-b3aa-7e1564298e9a">
+          <AttributeID>CALWEEK ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0d438729-08d0-44d7-97dd-6cae340ec59f">
+          <AttributeID>CALWEEK ISO LONG</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="daf0c98f-acf8-4478-976f-7e14cfaba452">
+          <AttributeID>CALWEEK ISO YEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="73cfd312-31e2-45f0-8fc8-15fc9d9a389d">
+          <AttributeID>CALWEEK ISO FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9ff57aae-01c8-49ca-8957-c5ce51109802">
+          <AttributeID>CALWEEK ISO LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e61a3e99-00aa-4d05-b530-a70328f4a1ac">
+          <AttributeID>CALWEEK ISO WEEKDAY MONTH SPLIT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="10ad2b9f-ed51-49ab-bb3e-421933513412">
+          <AttributeID>IS FIRST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="deb0979e-5e54-4b7f-ad68-dba608b40e8d">
+          <AttributeID>IS LAST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="721f4f2c-5cc5-4d7c-adff-7710e65da22c">
+          <AttributeID>IS FIRST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0d539633-310b-4fc2-a166-022b349e6fcc">
+          <AttributeID>IS LAST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="9b2e5e01-f826-49c1-8b08-4faa4cbac749">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="959d5480-6ea3-4306-b474-3d55657f85bb">
+      <ID>D Container</ID>
+      <Name>D Container</Name>
+      <DimensionID>D Container</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3b1e89bc-7b7d-4921-8066-92b0df593b62">
+          <AttributeID>Row Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="15e87bbd-f795-4287-a414-24f3e8f95679">
+          <AttributeID>Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="311c1b84-e833-4ae4-a22b-a4f20c507bed">
+          <AttributeID>Refrigeration Flag</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1c590525-8599-4103-b4c9-01bf2affd467">
+          <AttributeID>Power Flag</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5e08aea7-e5ed-4c2b-beb6-1be132fdd0bb">
+          <AttributeID>Length</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4a9dbb56-7b00-4e24-8a73-10879503aa58">
+          <AttributeID>Cubes</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="633cf085-edc1-41ec-bfb7-0e14cf6f7fee">
+          <AttributeID>Euro Price Per Km</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b2ece960-0fe6-430e-9c47-eae6806be3fd">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9cfa230d-06e5-416f-8539-90e60688c21f">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="9316d4a7-c364-4deb-ab58-cab5bbfdd53d">
+      <ID>D Item</ID>
+      <Name>D Item</Name>
+      <DimensionID>D Item</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="394db22d-a16e-4d2f-907c-37f20e6230d6">
+          <AttributeID>Row Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ece7a39c-71fd-4832-8252-aca261155ec9">
+          <AttributeID>Description</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d88c711c-6b16-48f0-99f0-8fab31aa9114">
+          <AttributeID>Category</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d63ceb90-21cb-498c-851b-0e1a898f0973">
+          <AttributeID>Manufactorer</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c31dd982-91e5-4414-80bd-e18bc60c755d">
+          <AttributeID>Container Type</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9099e5bc-5fc1-4cfe-9450-6c64d4ac26e4">
+          <AttributeID>Hazard Flag</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b3feace5-9c2a-4285-818e-2a378cfba01e">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="927d2917-bf30-4c25-adec-74b24ddaec2c">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="4b69f65d-ef95-4255-bd4d-6a25f6cc04ab">
+      <ID>D Consignor</ID>
+      <Name>D Consignor</Name>
+      <DimensionID>D Consignor</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cfd3eae0-9d1b-45bb-8f98-d22679a5469e">
+          <AttributeID>Row Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b634221a-352c-4fe0-b458-c86d97709fc5">
+          <AttributeID>Consignor</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8c55147a-08b2-4c98-88be-1d18ac3d6a13">
+          <AttributeID>City</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1d9ca2f9-3c37-445a-91c6-2e74f9932d18">
+          <AttributeID>Country</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e8bc818f-740f-488d-9ce5-90057720fe71">
+          <AttributeID>Discount</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="81a94cfe-61be-4572-8ae2-6f5e55eaa3c5">
+      <ID>D Ship</ID>
+      <Name>D Ship</Name>
+      <DimensionID>D Ship</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3c0e59cc-0f84-4750-b060-d5f45a5fd922">
+          <AttributeID>Row Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="00a1cc4b-b1b7-4302-8a95-1cba8faba056">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aadfd130-330d-4e3b-8047-f80769e350e4">
+          <AttributeID>Max TEU</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0b58b9e-ad81-45d3-aca0-a60698c742ec">
+          <AttributeID>Speed In Knots</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="03cf444b-da7a-48c1-b013-af5d878ab7dc">
+          <AttributeID>Speed In Km H</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="91a52260-d7a1-4d01-a3a8-dba06c7ca804">
+          <AttributeID>Country</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5fb5135f-3dd3-4cbe-8d4c-4c0b312daff6">
+          <AttributeID>Yearcost</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e3346de0-2834-4069-94e9-ff3b639dde11">
+          <AttributeID>Length</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d5e709c9-d285-426b-93c7-24c7a05866f7">
+          <AttributeID>Width</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9a8b8859-aa4f-452f-8f23-6b5dc3deb2a1">
+          <AttributeID>End Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d914189f-5faf-445c-a6d9-9a0aa1dd202f">
+          <AttributeID>Start Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="bf7fa1f2-6fe1-4ea8-9a2e-0d6fef60f8b5">
+      <ID>D Calendar</ID>
+      <Name>D Calendar</Name>
+      <DimensionID>D Calendar</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="db1b6622-6261-4db2-bed5-b6375b0e8fae">
+          <AttributeID>CALDAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1c4e42b9-7a1d-4883-8fac-ad5cce568b5a">
+          <AttributeID>DAY OF MONTH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a3f49b09-a79f-455b-b03a-17148a06f927">
+          <AttributeID>CALYEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9b655713-ab7e-48d3-a2c1-d7e7185fc575">
+          <AttributeID>CALMONTH ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="724e8313-92b8-4584-b03a-e080264ca2f8">
+          <AttributeID>CALMONTH NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="57303d5f-038f-4041-8cea-05c65e238481">
+          <AttributeID>CALMONTH NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6eb45f0a-757a-42bc-9e61-9584c5f76eda">
+          <AttributeID>CALMONTH NR OF DAYS</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c4da87b6-b72a-464b-bd4a-e44c196e320d">
+          <AttributeID>CALMONTH FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3d501cf2-b976-4203-a493-c5e1377c34c7">
+          <AttributeID>CALMONTH LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5142635c-3dda-49ed-bb89-4c5e25916e43">
+          <AttributeID>CALQUARTER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="52cced4e-47a1-4501-be21-2aa790dd079b">
+          <AttributeID>WEEKDAY NR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4b570c37-313f-42f0-bead-8b4fa19cd397">
+          <AttributeID>WEEKDAY NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83bc635e-13e7-42f5-ba1d-33d188a39b75">
+          <AttributeID>CALWEEK ISO</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3ff173de-8658-468d-8971-89fb9f3be9a0">
+          <AttributeID>CALWEEK ISO LONG</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="115662f3-a165-4fd1-b409-531cd9d8b305">
+          <AttributeID>CALWEEK ISO YEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5a77ece7-5a52-4279-9f1f-f9592a3f8690">
+          <AttributeID>CALWEEK ISO FIRST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e436534b-c062-44f5-9e0d-fca39ae6e6f1">
+          <AttributeID>CALWEEK ISO LAST DAY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f3c73c9d-9638-4983-99df-ac2c84bcabc8">
+          <AttributeID>CALWEEK ISO WEEKDAY MONTH SPLIT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="38decdf2-a7de-45d7-adf2-bcc8f26e7c4e">
+          <AttributeID>IS FIRST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d543a3e3-cc9b-43d0-bcd2-e4c990c98583">
+          <AttributeID>IS LAST DAY OF WEEK YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7c353c40-f969-4b00-bb31-7a5c3b6e09ed">
+          <AttributeID>IS FIRST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1a57e44-c1ed-4baa-b3aa-cc88943200be">
+          <AttributeID>IS LAST DAY OF MONTH YN</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="37ab2227-9bc4-4b07-9213-01844e282f00">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="32711079-571a-43b2-b8f8-399483c61156">
+      <ID>D Port</ID>
+      <Name>D Port</Name>
+      <DimensionID>D Port</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d49e40ae-4e38-479b-b354-ffe31680f8fb">
+          <AttributeID>Row Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5872055f-f9d4-466e-84ae-84860f9a8a23">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ad85917a-427c-45f8-8ab2-e5fdddcd117f">
+          <AttributeID>Country</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c0c80444-614b-46fb-82f6-d114b286c91b">
+          <AttributeID>Distance From Oslo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="51c3b5db-2a7a-4bd1-a4a2-f10254eba15d">
+          <AttributeID>Distance From Piraeus</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="916a3457-998b-4d7b-9eb0-3f472ecd982d">
+      <ID>T Shipment Voyage</ID>
+      <Name>T Shipment Voyage</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="800b925f-d953-4fbf-b347-e7011f0ebc7b">
+          <ID>Container Start Nr</ID>
+          <Name>Container Start Nr</Name>
+          <Source dwd:design-time-name="26dea059-989d-481c-a7fd-37075e3dd848">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ac843ca5-6f8a-4472-be72-139c0ca1ac01">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>ContainerStartNr</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eea0cdb5-8ab4-4ce0-8226-cd1a3815c46d">
+          <ID>Container End Nr</ID>
+          <Name>Container End Nr</Name>
+          <Source dwd:design-time-name="90ea6486-e6d1-42f1-a009-4c1b89cd982f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7f793586-5a46-4da8-a9db-20bcac2394b4">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>ContainerEndNr</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6f1014ba-6325-4c1d-a83a-407c48c30370">
+          <ID>Port Current Row Id</ID>
+          <Name>Port Current Row Id</Name>
+          <Source dwd:design-time-name="24b00bd9-71e6-4f7b-9410-98b1a751dc8a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="24d5548c-1c4d-4405-8c2b-223972c22b4e">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>PortCurrentRowId</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d296c8a5-0163-493b-b53b-f2dfea84e642">
+          <ID>Port Next Row Id</ID>
+          <Name>Port Next Row Id</Name>
+          <Source dwd:design-time-name="492f15f2-f80f-44eb-9256-235a7826649f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="45258c24-29c3-4447-961a-18e6b8111a95">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>PortNextRowId</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c92e9cd4-8af4-4875-8908-7af258d165b1">
+          <ID>Port End Row Id</ID>
+          <Name>Port End Row Id</Name>
+          <Source dwd:design-time-name="e948e27e-1ceb-4a5f-9ac2-7c6dee41b731">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2749560c-b8ba-4c6c-a283-dba53de52830">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>PortEndRowId</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d4581e36-5585-4597-b59f-09308f34dfab">
+          <ID>Traject Distance</ID>
+          <Name>Traject Distance</Name>
+          <Source dwd:design-time-name="d77e81c7-0739-4896-b5e3-75ce8fa6ceca">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="03e654a7-b0f0-412c-ae10-033ea338701a">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>TrajectDistance</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="24111cb9-d9d9-4c45-8c75-54fa009b63cf">
+          <ID>Load Factor</ID>
+          <Name>Load Factor</Name>
+          <Source dwd:design-time-name="0ec65846-80c6-4145-92d7-6469a51ff014">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2a1dbfbb-5d2c-488e-8485-5ab6c74d05c3">
+              <TableID>dbo_T_ShipmentVoyage</TableID>
+              <ColumnID>LoadFactor</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="00dd5fca-b573-478f-a399-f1753eee7584">
+          <CubeDimensionID>D Container</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c2809e05-9521-4d83-9f83-70e444b7cb74">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="65b09569-0629-4c70-949f-3361d4bf9417">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b2ee227b-456b-4adf-ba58-ddbb0ed15439">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>ContainerRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4682300e-cae0-438d-9048-3fee9d9ade4e">
+          <CubeDimensionID>D Item</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c47afdfb-a472-40c6-bff4-c10f665b3000">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0ca9e9c6-bd12-4a69-b9ed-4b8a6b379512">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e3a6673d-e63b-43dc-9efb-056ef84d01c1">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>ItemRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0aa7eb2b-8cdd-4bf0-89e6-c7df5b703bd0">
+          <CubeDimensionID>D Consignor</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e7495070-acc6-49b0-b4ce-242a2bd4bc6e">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2c0e2a8a-6cbb-43d3-971e-8bd8bb5232c1">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a1a56ac3-7379-4eac-8f91-d5b39d0e7f10">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>ConsignorRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1e4fa039-3ef2-452a-a784-7fb7787c34cb">
+          <CubeDimensionID>D Ship</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b27e367e-78c1-4125-a349-ea4a5e46446a">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3ebdca9e-24b0-4324-a650-72aa3f4e3731">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="48b86d70-ecd9-4613-bdb8-a835fda6c246">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>ShipRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="542a480e-147d-496d-b071-0433b9145dbc">
+          <CubeDimensionID>Leg Date Arrival Next</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="71cb7509-ab15-4a22-a0db-aeda6dcf36e1">
+              <AttributeID>CALDAY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f564cded-dedd-465b-b803-b8eaa7c31545">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="81568a48-408b-43c4-949a-5ee404d124d5">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>LegDateArrivalNext</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="20b3bbed-3dd1-4acc-b5e9-a18275b6bc96">
+          <CubeDimensionID>Leg Date Depart Current</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="53077c88-1887-4713-9eae-42a3500959a0">
+              <AttributeID>CALDAY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8b22a268-4f42-48f6-ab16-91cb7e593ab4">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0fdddacf-1885-47b1-9c30-20c070e3b25d">
+                    <TableID>dbo_T_ShipmentVoyage</TableID>
+                    <ColumnID>LegDateDepartCurrent</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="59b54863-d8e1-42b6-bdd1-3a6800b7a7cc">
+      <ID>T Stay Days</ID>
+      <Name>T Stay Days</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1bca0c07-0f12-49ae-bcf8-18ee813a399b">
+          <ID>Stay Days</ID>
+          <Name>Stay Days</Name>
+          <Source dwd:design-time-name="473d47dc-ff3c-4795-bab9-6364408162de">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e2c3af1f-e7b4-4c21-9e38-8a10a74d064d">
+              <TableID>dbo_T_StayDays</TableID>
+              <ColumnID>StayDays</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="67c19518-55fb-47bb-9878-103a945a1b81">
+          <CubeDimensionID>D Ship</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f9e7c1d5-775e-478b-aee2-f25d0d9a0f2c">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="be4cb511-5969-487b-9895-1e985b5832c8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4497bde4-3365-42bf-bf79-33fe4d33d0d1">
+                    <TableID>dbo_T_StayDays</TableID>
+                    <ColumnID>ShipRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4a6ef073-5c9e-45d1-9f69-9f131639d079">
+          <CubeDimensionID>D Calendar</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="552245e1-7be6-4084-bcdb-c55bdb6c6e7e">
+              <AttributeID>CALDAY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cda0cdb3-c6e0-4137-9215-37f836e3e5b3">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0a3b04dd-a8fd-4201-b6fd-b271f08efee7">
+                    <TableID>dbo_T_StayDays</TableID>
+                    <ColumnID>LegDateArrival</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7879f251-6c97-4a64-a335-648bfcf4cfe6">
+          <CubeDimensionID>D Port</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="da8fee9b-117d-48dc-8a0f-e22ab446523c">
+              <AttributeID>Row Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="ecb10296-d698-4bac-be56-9bf5ee84dbeb">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e5329b9f-c8a7-4102-8f8b-6f1704aac81a">
+                    <TableID>dbo_T_StayDays</TableID>
+                    <ColumnID>PortCurrentRowId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="c2f2c4ee-abec-4136-b75f-7a82260625ae">
+    <DataSourceViewID>Pjotr Kramse ODS View</DataSourceViewID>
+  </Source>
+</Cube>
