@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{EFF97035-B044-488E-B21E-7DEA42BD9D0D}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{C422D768-D5C1-414F-AD8F-7A7493B36FBE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1340,6 +1340,88 @@
           version="1">
           <components>
             <component
+              refId="Package\Load Item\Fix typo"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Fix typo"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Item\Fix typo.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Item\Fix typo.Inputs[Derived Column Input].Columns[item_category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="item_category"
+                      lineageId="Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_category]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Item\Fix typo.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Item\Fix typo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Item\Fix typo.Outputs[Derived Column Output].Columns[ModifiedProduct]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Item\Fix typo.Outputs[Derived Column Output].Columns[ModifiedProduct]"
+                      name="ModifiedProduct"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_category]} == "domestic appliance") ? "domestic appliances" : #{Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_category]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(item_category == "domestic appliance") ? "domestic appliances" : item_category</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Item\Fix typo.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Item\Fix typo.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Item\Fix typo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Item\Fix typo.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Item\Fix typo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Item\Fix typo.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load Item\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1425,13 +1507,6 @@
                       externalMetadataColumnId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_description]"
                       lineageId="Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_description]" />
                     <inputColumn
-                      refId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[item_category]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="item_category"
-                      externalMetadataColumnId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_category]"
-                      lineageId="Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_category]" />
-                    <inputColumn
                       refId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[item_mfgr]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -1452,6 +1527,13 @@
                       cachedName="item_hazard_flag"
                       externalMetadataColumnId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_hazard_flag]"
                       lineageId="Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output].Columns[item_hazard_flag]" />
+                    <inputColumn
+                      refId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedProduct]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ModifiedProduct"
+                      externalMetadataColumnId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[item_category]"
+                      lineageId="Package\Load Item\Fix typo.Outputs[Derived Column Output].Columns[ModifiedProduct]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1726,8 +1808,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Load Item.Paths[OLE DB Source Output]"
+              refId="Package\Load Item.Paths[Derived Column Output]"
               endId="Package\Load Item\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Item\Fix typo.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Item.Paths[OLE DB Source Output]"
+              endId="Package\Load Item\Fix typo.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Load Item\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -7104,47 +7191,47 @@ where [refTable].[VV_VoyageId] = ? and [refTable].[Vp_PortIdNext] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Execute SQL Task"
           TopLeft="198.571428994135,61.1764705346118" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Load Consignor"
           TopLeft="40.7142858009557,142.05882341278" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Load Container"
           TopLeft="505.857143938239,132.529411649415" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Load Item"
           TopLeft="210.714286162841,136.882352821193" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126,42"
           Id="Package\Load MRV"
           TopLeft="677.142858584316,135.352941057828" />
         <NodeLayout
-          Size="123.2,41.6"
+          Size="123,42"
           Id="Package\Load Port"
           TopLeft="357.14285790312,213.352940989458" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Load Ship"
           TopLeft="360.000000766345,134.588235176146" />
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\Load Shipment"
           TopLeft="255.714286258634,346.411764402239" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Load ShipmentDetail"
           TopLeft="94.285714507711,413.705882001707" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Load Voyage"
           TopLeft="353.571429324088,282.94117622258" />
         <NodeLayout
-          Size="158.4,41.6"
+          Size="158,42"
           Id="Package\Load VoyagePort"
           TopLeft="462.000000957931,343.058823219066" />
         <EdgeLayout
@@ -7734,7 +7821,9 @@ where [refTable].[VV_VoyageId] = ? and [refTable].[Vp_PortIdNext] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7768,7 +7857,9 @@ where [refTable].[VV_VoyageId] = ? and [refTable].[Vp_PortIdNext] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7791,49 +7882,61 @@ where [refTable].[VV_VoyageId] = ? and [refTable].[Vp_PortIdNext] = ?</property>
     design-time-name="Package\Load Item">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load Item\OLE DB Source"
           TopLeft="303.999995470047,173.999997407198" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load Item\OLE DB Destination"
-          TopLeft="311.999995350838,319.999995231628" />
+          TopLeft="288.999995350838,370.999995231628" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\Load Item\Fix typo"
+          TopLeft="316,270" />
         <EdgeLayout
           Id="Package\Load Item.Paths[OLE DB Source Output]"
-          TopLeft="378.799995470047,215.599997407198">
+          TopLeft="376.499997735023,215.999997407198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.3999998807907,104.39999782443"
+              EndConnector="0,54.000002592802"
               Start="0,0"
-              End="18.3999998807907,96.8999978244305">
+              End="0,46.500002592802">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.1999989122152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48.1999989122152"
-                    Point2="0,52.1999989122152"
-                    Point3="4,52.1999989122152" />
-                  <mssgle:LineSegment
-                    End="14.3999998807907,52.1999989122152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.3999998807907,52.1999989122152"
-                    Point2="18.3999998807907,52.1999989122152"
-                    Point3="18.3999998807907,56.1999989122152" />
-                  <mssgle:LineSegment
-                    End="18.3999998807907,96.8999978244305" />
+                    End="0,46.500002592802" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Item.Paths[Derived Column Output]"
+          TopLeft="373.999997675419,312">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.999995231628"
+              Start="0,0"
+              End="0,51.499995231628">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.499995231628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

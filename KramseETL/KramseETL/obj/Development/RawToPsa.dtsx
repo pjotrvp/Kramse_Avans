@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="RawToERP"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{2AF70F78-F124-40BC-959A-9FA06CF4EB7D}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{1A5E8B4E-4DB2-4780-9887-2694DE504B92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -7520,35 +7520,35 @@ where [refTable].[VV_VoyageId] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="212.8,41.6"
+          Size="213,42"
           Id="Package\Clear Persistent staging area"
           TopLeft="222.321429044693,53.5294117177853" />
         <NodeLayout
-          Size="110.4,41.6"
+          Size="110,42"
           Id="Package\D_Port"
           TopLeft="526.785715407102,174.926470434906" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Load D_Consignor"
           TopLeft="22.3214286189446,174.926470434906" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Load D_Container"
           TopLeft="193.750000412443,173.014705730699" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Load D_Item"
           TopLeft="370.535715074487,173.014705730699" />
         <NodeLayout
-          Size="137.6,41.6"
+          Size="138,42"
           Id="Package\Load D_Ship"
           TopLeft="658.0357156865,173.014705730699" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\T_ShipmentVoyage"
           TopLeft="301.785714928137,358.455882038741" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\T_StayDays"
           TopLeft="344,434" />
         <EdgeLayout
@@ -8220,13 +8220,13 @@ where [refTable].[VV_VoyageId] = ?</property>
     design-time-name="Package\Load D_Ship">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load D_Ship\OLE DB Source"
           TopLeft="224.999996647239,102.99999846518" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load D_Ship\OLE DB Destination"
           TopLeft="176.999997362495,236.999996468425" />
         <EdgeLayout
@@ -8260,9 +8260,7 @@ where [refTable].[VV_VoyageId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8304,34 +8302,6 @@ where [refTable].[VV_VoyageId] = ?</property>
           Id="Package\T_ShipmentVoyage\Sort ShipmentDetails"
           TopLeft="794.999988153577,181.999997287989" />
         <NodeLayout
-          Size="190.4,41.6"
-          Id="Package\T_ShipmentVoyage\Merge join ShipmentExt"
-          TopLeft="653.999990254641,311.999995350838" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\T_ShipmentVoyage\Lookup ShipMaxTEU"
-          TopLeft="549.857142831294,557.352941160384" />
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\T_ShipmentVoyage\Sort Shipment"
-          TopLeft="581.999991327524,178.999997332692" />
-        <NodeLayout
-          Size="118.4,41.6"
-          Id="Package\T_ShipmentVoyage\Voyages"
-          TopLeft="150.999997749925,73.9999988973141" />
-        <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\T_ShipmentVoyage\VoyagePorts"
-          TopLeft="329.999995082617,72.9999989122152" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\T_ShipmentVoyage\Sort Voyages"
-          TopLeft="137.99999794364,173.999997407198" />
-        <NodeLayout
-          Size="184.8,41.6"
-          Id="Package\T_ShipmentVoyage\To T_ShipmentVoyage"
-          TopLeft="647.999988436699,766.999991759658" />
-        <NodeLayout
           Size="121.6,41.6"
           Id="Package\T_ShipmentVoyage\Shipment"
           TopLeft="586.999991253018,72.9999989122153" />
@@ -8340,145 +8310,79 @@ where [refTable].[VV_VoyageId] = ?</property>
           Id="Package\T_ShipmentVoyage\ShipmentDetails"
           TopLeft="801.999988049269,77.9999988377094" />
         <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\T_ShipmentVoyage\Conditional Split"
-          TopLeft="548,651" />
+          Size="144.8,41.6"
+          Id="Package\T_ShipmentVoyage\Sort Shipment"
+          TopLeft="581.999991327524,178.999997332692" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\T_ShipmentVoyage\Merge join ShipmentExt"
+          TopLeft="667.571418854959,256.176465988005" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\T_ShipmentVoyage\Sort Voyages"
+          TopLeft="137.99999794364,173.999997407198" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\T_ShipmentVoyage\To T_ShipmentVoyage"
+          TopLeft="596.57141689865,542.941168426643" />
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\T_ShipmentVoyage\Sort VoyagePorts"
           TopLeft="325.999995142222,174.999997392297" />
         <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\T_ShipmentVoyage\Voyages"
+          TopLeft="150.999997749925,73.9999988973141" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\T_ShipmentVoyage\Lookup ShipMaxTEU"
+          TopLeft="584.8571429058,431.176470682747" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\T_ShipmentVoyage\VoyagePorts"
+          TopLeft="329.999995082617,72.9999989122152" />
+        <NodeLayout
           Size="191.2,41.6"
           Id="Package\T_ShipmentVoyage\Merge Join VoyagePorts"
-          TopLeft="245.999996334314,273.999995917082" />
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Sort Output3]"
-          TopLeft="883.399988153577,223.599997287989">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-103.799997898936,88.3999980628491"
-              Start="0,0"
-              End="-103.799997898936,80.8999980628491">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5979988473952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48.5979988473952"
-                    Point2="0,52.5979988473952"
-                    Point3="-4,52.5979988473952" />
-                  <mssgle:LineSegment
-                    End="-99.7999978989361,52.5979988473952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-99.7999978989361,52.5979988473952"
-                    Point2="-103.799997898936,52.5979988473952"
-                    Point3="-103.799997898936,56.5979988473952" />
-                  <mssgle:LineSegment
-                    End="-103.799997898936,80.8999980628491" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Sort Output2]"
-          TopLeft="654.399991327524,220.599997332692">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.7999989271165,91.3999980181457"
-              Start="0,0"
-              End="94.7999989271165,83.8999980181457">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.6999990090728" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.6999990090728"
-                    Point2="0,45.6999990090728"
-                    Point3="4,45.6999990090728" />
-                  <mssgle:LineSegment
-                    End="90.7999989271165,45.6999990090728" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.7999989271165,45.6999990090728"
-                    Point2="94.7999989271165,45.6999990090728"
-                    Point3="94.7999989271165,49.6999990090728" />
-                  <mssgle:LineSegment
-                    End="94.7999989271165,83.8999980181457" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Sort Output1]"
-          TopLeft="405.599995142222,216.599997392297">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.4666654745739,57.399998524785"
-              Start="0,0"
-              End="-33.4666654745739,49.899998524785">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1541899935858" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.1541899935858"
-                    Point2="0,34.1541899935858"
-                    Point3="-4,34.1541899935858" />
-                  <mssgle:LineSegment
-                    End="-29.4666654745739,34.1541899935858" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29.4666654745739,34.1541899935858"
-                    Point2="-33.4666654745739,34.1541899935858"
-                    Point3="-33.4666654745739,38.1541899935858" />
-                  <mssgle:LineSegment
-                    End="-33.4666654745739,49.899998524785" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="228.142853439158,245.705878294824" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\T_ShipmentVoyage\Merge Join"
+          TopLeft="412.628571899935,390.964705756337" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\T_ShipmentVoyage\Conditional Split"
+          TopLeft="406.571428270364,502.647058953566" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\T_ShipmentVoyage\Sort ShipmentExt"
+          TopLeft="599.771429441169,338.894117610863" />
         <EdgeLayout
           Id="Package\T_ShipmentVoyage.Paths[Sort Output]"
           TopLeft="207.99999794364,215.599997407198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103.066665057341,58.3999985098839"
+              EndConnector="85.2095221621847,30.105880887626"
               Start="0,0"
-              End="103.066665057341,50.8999985098839">
+              End="85.2095221621847,22.605880887626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.7492107316073" />
+                    End="0,13.9136237314754" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.7492107316073"
-                    Point2="0,34.7492107316073"
-                    Point3="4,34.7492107316073" />
+                    Point1="0,13.9136237314754"
+                    Point2="0,17.9136237314754"
+                    Point3="4,17.9136237314754" />
                   <mssgle:LineSegment
-                    End="99.0666650573413,34.7492107316073" />
+                    End="81.2095221621847,17.9136237314754" />
                   <mssgle:CubicBezierSegment
-                    Point1="99.0666650573413,34.7492107316073"
-                    Point2="103.066665057341,34.7492107316073"
-                    Point3="103.066665057341,38.7492107316073" />
+                    Point1="81.2095221621847,17.9136237314754"
+                    Point2="85.2095221621847,17.9136237314754"
+                    Point3="85.2095221621847,21.9136237314754" />
                   <mssgle:LineSegment
-                    End="103.066665057341,50.8999985098839" />
+                    End="85.2095221621847,22.605880887626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8489,37 +8393,37 @@ where [refTable].[VV_VoyageId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\T_ShipmentVoyage.Paths[OnlyRealVoyage]"
-          TopLeft="625.5,693">
+          TopLeft="561.771428270364,523.447058953566">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="114.999988436699,73.999991759658"
+              EndConnector="34.7999886282855,40.2941094730761"
               Start="0,0"
-              End="114.999988436699,66.499991759658">
+              End="27.2999886282855,40.2941094730761">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.999995879829" />
+                    End="13.3999943141428,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.999995879829"
-                    Point2="0,36.999995879829"
-                    Point3="4,36.999995879829" />
+                    Point1="13.3999943141428,0"
+                    Point2="17.3999943141428,0"
+                    Point3="17.3999943141428,4" />
                   <mssgle:LineSegment
-                    End="110.999988436699,36.999995879829" />
+                    End="17.3999943141428,36.2941094730761" />
                   <mssgle:CubicBezierSegment
-                    Point1="110.999988436699,36.999995879829"
-                    Point2="114.999988436699,36.999995879829"
-                    Point3="114.999988436699,40.999995879829" />
+                    Point1="17.3999943141428,36.2941094730761"
+                    Point2="17.3999943141428,40.2941094730761"
+                    Point3="21.3999943141428,40.2941094730761" />
                   <mssgle:LineSegment
-                    End="114.999988436699,66.499991759658" />
+                    End="27.2999886282855,40.2941094730761" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="21.1111270308495,41.999995879829,72.777734375,11.6630859375"
+              BoundingBox="-18.9888728733572,-17.6630859375,72.777734375,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8611,142 +8515,100 @@ where [refTable].[VV_VoyageId] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,41.6"
-          Id="Package\T_ShipmentVoyage\Sort ShipmentExt"
-          TopLeft="562.628572219245,406.188235198936" />
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Merge Join Output]"
-          TopLeft="749.199990254641,353.599995350838">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-106.571418035396,52.5882398480978"
-              Start="0,0"
-              End="-106.571418035396,45.0882398480978">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.2941199240489" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.2941199240489"
-                    Point2="0,26.2941199240489"
-                    Point3="-4,26.2941199240489" />
-                  <mssgle:LineSegment
-                    End="-102.571418035396,26.2941199240489" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-102.571418035396,26.2941199240489"
-                    Point2="-106.571418035396,26.2941199240489"
-                    Point3="-106.571418035396,30.2941199240489" />
-                  <mssgle:LineSegment
-                    End="-106.571418035396,45.0882398480978" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\T_ShipmentVoyage\Merge Join"
-          TopLeft="404.771429026066,471.258823333015" />
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Merge Join Output1]"
-          TopLeft="341.599996334314,315.599995917082">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.971432691752,155.658827415933"
-              Start="0,0"
-              End="127.971432691752,148.158827415933">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73.8294137079667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,73.8294137079667"
-                    Point2="0,77.8294137079667"
-                    Point3="4,77.8294137079667" />
-                  <mssgle:LineSegment
-                    End="123.971432691752,77.8294137079667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.971432691752,77.8294137079667"
-                    Point2="127.971432691752,77.8294137079667"
-                    Point3="127.971432691752,81.8294137079667" />
-                  <mssgle:LineSegment
-                    End="127.971432691752,148.158827415933" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\T_ShipmentVoyage.Paths[Sort Output4]"
-          TopLeft="642.628572219245,447.788235198936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-152.790476526513,23.4705881340796"
-              Start="0,0"
-              End="-152.790476526513,15.9705881340796">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.91061686971059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.91061686971059"
-                    Point2="0,13.9106168697106"
-                    Point3="-4,13.9106168697106" />
-                  <mssgle:LineSegment
-                    End="-148.790476526513,13.9106168697106" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-148.790476526513,13.9106168697106"
-                    Point2="-152.790476526513,13.9106168697106"
-                    Point3="-152.790476526513,17.9106168697106" />
-                  <mssgle:LineSegment
-                    End="-152.790476526513,15.9705881340796" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\T_ShipmentVoyage.Paths[Merge Join Output2]"
-          TopLeft="469.571429026066,512.858823333015">
+          TopLeft="542.228571899935,417.364705756337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="167.885713805228,44.4941178273681"
+              EndConnector="42.6285710058651,34.6117649264103"
               Start="0,0"
-              End="167.885713805228,36.9941178273681">
+              End="35.1285710058651,34.6117649264103">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.247058913684" />
+                    End="13.9987299802542,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.247058913684"
-                    Point2="0,22.247058913684"
-                    Point3="4,22.247058913684" />
+                    Point1="13.9987299802542,0"
+                    Point2="17.9987299802542,0"
+                    Point3="17.9987299802542,4" />
                   <mssgle:LineSegment
-                    End="163.885713805228,22.247058913684" />
+                    End="17.9987299802542,30.6117649264103" />
                   <mssgle:CubicBezierSegment
-                    Point1="163.885713805228,22.247058913684"
-                    Point2="167.885713805228,22.247058913684"
-                    Point3="167.885713805228,26.247058913684" />
+                    Point1="17.9987299802542,30.6117649264103"
+                    Point2="17.9987299802542,34.6117649264103"
+                    Point3="21.9987299802542,34.6117649264103" />
                   <mssgle:LineSegment
-                    End="167.885713805228,36.9941178273681" />
+                    End="35.1285710058651,34.6117649264103" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Merge Join Output1]"
+          TopLeft="323.742853439158,287.305878294824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.685718460777,103.658827461513"
+              Start="0,0"
+              End="153.685718460777,96.158827461513">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8294137307565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.8294137307565"
+                    Point2="0,51.8294137307565"
+                    Point3="4,51.8294137307565" />
+                  <mssgle:LineSegment
+                    End="149.685718460777,51.8294137307565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.685718460777,51.8294137307565"
+                    Point2="153.685718460777,51.8294137307565"
+                    Point3="153.685718460777,55.8294137307565" />
+                  <mssgle:LineSegment
+                    End="153.685718460777,96.158827461513" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Merge Join Output]"
+          TopLeft="762.771418854959,297.776465988005">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.99998941379,41.1176516228583"
+              Start="0,0"
+              End="-82.99998941379,33.6176516228583">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588258114292" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5588258114292"
+                    Point2="0,20.5588258114292"
+                    Point3="-4,20.5588258114292" />
+                  <mssgle:LineSegment
+                    End="-78.99998941379,20.5588258114292" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.99998941379,20.5588258114292"
+                    Point2="-82.99998941379,20.5588258114292"
+                    Point3="-82.99998941379,24.5588258114292" />
+                  <mssgle:LineSegment
+                    End="-82.99998941379,33.6176516228583" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8757,68 +8619,181 @@ where [refTable].[VV_VoyageId] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\T_ShipmentVoyage.Paths[Lookup Match Output]"
-          TopLeft="637.457142831294,598.952941160384">
+          TopLeft="672.4571429058,472.776470682747">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.8571428312938,52.0470588396164"
+              EndConnector="-188.285714635436,29.870588270819"
               Start="0,0"
-              End="-11.8571428312938,44.5470588396164">
+              End="-188.285714635436,22.370588270819">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.0235294198082" />
+                    End="0,10.9352941354095" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.0235294198082"
-                    Point2="0,26.0235294198082"
-                    Point3="-4,26.0235294198082" />
+                    Point1="0,10.9352941354095"
+                    Point2="0,14.9352941354095"
+                    Point3="-4,14.9352941354095" />
                   <mssgle:LineSegment
-                    End="-7.8571428312938,26.0235294198082" />
+                    End="-184.285714635436,14.9352941354095" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.8571428312938,26.0235294198082"
-                    Point2="-11.8571428312938,26.0235294198082"
-                    Point3="-11.8571428312938,30.0235294198082" />
+                    Point1="-184.285714635436,14.9352941354095"
+                    Point2="-188.285714635436,14.9352941354095"
+                    Point3="-188.285714635436,18.9352941354095" />
                   <mssgle:LineSegment
-                    End="-11.8571428312938,44.5470588396164" />
+                    End="-188.285714635436,22.370588270819" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.1199581343969,31.0235294198082,96.3827734375,11.609375"
+              BoundingBox="-142.334244036468,19.9352941354095,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Sort Output4]"
+          TopLeft="599.771429441169,359.694117610863">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.5428575412346,52.0705881454739"
+              Start="0,0"
+              End="-50.0428575412346,52.0705881454739">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.7714287706173,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.7714287706173,0"
+                    Point2="-28.7714287706173,0"
+                    Point3="-28.7714287706173,4" />
+                  <mssgle:LineSegment
+                    End="-28.7714287706173,48.0705881454739" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.7714287706173,48.0705881454739"
+                    Point2="-28.7714287706173,52.0705881454739"
+                    Point3="-32.7714287706173,52.0705881454739" />
+                  <mssgle:LineSegment
+                    End="-50.0428575412346,52.0705881454739" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Sort Output3]"
+          TopLeft="883.399988153577,223.599997287989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.2285692986176,32.5764687000157"
+              Start="0,0"
+              End="-90.2285692986176,25.0764687000157">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3829988765094" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3829988765094"
+                    Point2="0,19.3829988765094"
+                    Point3="-4,19.3829988765094" />
+                  <mssgle:LineSegment
+                    End="-86.2285692986176,19.3829988765094" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.2285692986176,19.3829988765094"
+                    Point2="-90.2285692986176,19.3829988765094"
+                    Point3="-90.2285692986176,23.3829988765094" />
+                  <mssgle:LineSegment
+                    End="-90.2285692986176,25.0764687000157" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Sort Output2]"
+          TopLeft="654.399991327524,220.599997332692">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.9714275274354,35.5764686553127"
+              Start="0,0"
+              End="77.9714275274354,28.0764686553127">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1679988499111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1679988499111"
+                    Point2="0,21.1679988499111"
+                    Point3="4,21.1679988499111" />
+                  <mssgle:LineSegment
+                    End="73.9714275274354,21.1679988499111" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.9714275274354,21.1679988499111"
+                    Point2="77.9714275274354,21.1679988499111"
+                    Point3="77.9714275274354,25.1679988499111" />
+                  <mssgle:LineSegment
+                    End="77.9714275274354,28.0764686553127" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\T_ShipmentVoyage.Paths[Sort Output1]"
+          TopLeft="405.599995142222,216.599997392297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51.3238083697307,29.105880902527"
+              Start="0,0"
+              End="-51.3238083697307,21.605880902527">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.3186029934538" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3186029934538"
+                    Point2="0,17.3186029934538"
+                    Point3="-4,17.3186029934538" />
+                  <mssgle:LineSegment
+                    End="-47.3238083697307,17.3186029934538" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47.3238083697307,17.3186029934538"
+                    Point2="-51.3238083697307,17.3186029934538"
+                    Point3="-51.3238083697307,21.3186029934538" />
+                  <mssgle:LineSegment
+                    End="-51.3238083697307,21.605880902527" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\T_ShipmentVoyage\Lookup ShipMaxTEU">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[D_Ship]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\T_ShipmentVoyage\Voyages">
+    design-time-name="Package\T_ShipmentVoyage\Shipment">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8831,7 +8806,7 @@ where [refTable].[VV_VoyageId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\T_ShipmentVoyage\VoyagePorts">
+    design-time-name="Package\T_ShipmentVoyage\ShipmentDetails">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8857,7 +8832,7 @@ where [refTable].[VV_VoyageId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\T_ShipmentVoyage\Shipment">
+    design-time-name="Package\T_ShipmentVoyage\Voyages">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8870,7 +8845,30 @@ where [refTable].[VV_VoyageId] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\T_ShipmentVoyage\ShipmentDetails">
+    design-time-name="Package\T_ShipmentVoyage\Lookup ShipMaxTEU">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[D_Ship]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\T_ShipmentVoyage\VoyagePorts">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

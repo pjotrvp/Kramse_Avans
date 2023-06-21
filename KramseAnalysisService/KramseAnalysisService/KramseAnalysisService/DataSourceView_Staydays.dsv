@@ -1,0 +1,239 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f6db0feb-a810-4ff0-b9c3-9c9318542cca" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DataSourceView_Staydays</ID>
+  <Name>DataSourceView_Staydays</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Pjotr Kramse ODS</DataSourceID>
+  <Schema>
+    <xs:schema id="DataSourceView_Staydays" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DataSourceView_Staydays" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="245487ec-0578-4b2a-9040-e5c00e568362">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_T_StayDays" msprop:DbTableName="T_StayDays" msprop:FriendlyName="T_StayDays" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="c6848065-eca6-47d4-840f-ce76ef513d3b">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ShipRowId" msprop:FriendlyName="ShipRowId" msprop:DbColumnName="ShipRowId" msprop:design-time-name="bf7d91c0-2948-4121-ba7f-7898b9118c09" type="xs:int" />
+                  <xs:element name="PortCurrentRowId" msprop:FriendlyName="PortCurrentRowId" msprop:DbColumnName="PortCurrentRowId" msprop:design-time-name="ca1b7956-f2ed-4f0f-8543-d95bcbf63f65" type="xs:int" />
+                  <xs:element name="LegDateArrival" msprop:FriendlyName="LegDateArrival" msprop:DbColumnName="LegDateArrival" msprop:design-time-name="bdace55d-de71-4dbc-a8df-aa0791b80fde" type="xs:dateTime" />
+                  <xs:element name="LegDateDepart" msprop:FriendlyName="LegDateDepart" msprop:DbColumnName="LegDateDepart" msprop:design-time-name="2a922e3e-57b2-4885-802c-c203e0675ef3" type="xs:dateTime" />
+                  <xs:element name="PreviousLegDateArrival" msprop:FriendlyName="PreviousLegDateArrival" msprop:DbColumnName="PreviousLegDateArrival" msprop:design-time-name="10016842-f320-43b6-8142-a1667b5c29ee" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="StayDays" msprop:FriendlyName="StayDays" msprop:DbColumnName="StayDays" msprop:design-time-name="f5b3bc1d-b9cc-46ed-91d7-822d89135d31" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_D_Calendar" msprop:DbTableName="D_Calendar" msprop:FriendlyName="D_Calendar" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="71e7a246-7a76-4885-842d-e395282658bc">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CALDAY" msprop:FriendlyName="CALDAY" msprop:DbColumnName="CALDAY" msprop:design-time-name="021013ff-1a88-4286-b835-0ed33e61595a" type="xs:dateTime" />
+                  <xs:element name="DAY_OF_MONTH" msprop:FriendlyName="DAY_OF_MONTH" msprop:DbColumnName="DAY_OF_MONTH" msprop:design-time-name="1040c97f-b68b-43ae-afc3-68ebb839c233" type="xs:int" minOccurs="0" />
+                  <xs:element name="CALYEAR" msprop:FriendlyName="CALYEAR" msprop:DbColumnName="CALYEAR" msprop:design-time-name="9c853a47-f51a-4579-9915-fdc9b9d481b4" type="xs:int" minOccurs="0" />
+                  <xs:element name="CALMONTH_ISO" msprop:FriendlyName="CALMONTH_ISO" msprop:DbColumnName="CALMONTH_ISO" msprop:design-time-name="f8a414a5-f407-45b6-8ec7-8de202da4e96" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CALMONTH_NAME" msprop:FriendlyName="CALMONTH_NAME" msprop:DbColumnName="CALMONTH_NAME" msprop:design-time-name="9ff30cb6-a64c-4913-8340-7073e3f2e3b4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CALMONTH_NR" msprop:FriendlyName="CALMONTH_NR" msprop:DbColumnName="CALMONTH_NR" msprop:design-time-name="0fd94c74-59e7-4806-818a-4e2b1ebada89" type="xs:int" minOccurs="0" />
+                  <xs:element name="CALMONTH_NR_OF_DAYS" msprop:FriendlyName="CALMONTH_NR_OF_DAYS" msprop:DbColumnName="CALMONTH_NR_OF_DAYS" msprop:design-time-name="12686a1c-4c43-4fe5-9647-d59028195ec4" type="xs:int" minOccurs="0" />
+                  <xs:element name="CALMONTH_FIRST_DAY" msprop:FriendlyName="CALMONTH_FIRST_DAY" msprop:DbColumnName="CALMONTH_FIRST_DAY" msprop:design-time-name="6bda8d96-e061-4b8c-891b-bed58c46df6c" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="CALMONTH_LAST_DAY" msprop:FriendlyName="CALMONTH_LAST_DAY" msprop:DbColumnName="CALMONTH_LAST_DAY" msprop:design-time-name="9eee6ce5-9ce5-4075-894d-eb6168b90b9d" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="CALQUARTER" msprop:FriendlyName="CALQUARTER" msprop:DbColumnName="CALQUARTER" msprop:design-time-name="32bc4deb-881d-445f-8cdc-1c7a3b8139ba" type="xs:int" minOccurs="0" />
+                  <xs:element name="WEEKDAY_NR" msprop:FriendlyName="WEEKDAY_NR" msprop:DbColumnName="WEEKDAY_NR" msprop:design-time-name="c0d40fc7-469a-4a12-b0a9-e58789e803d1" type="xs:int" minOccurs="0" />
+                  <xs:element name="WEEKDAY_NAME" msprop:FriendlyName="WEEKDAY_NAME" msprop:DbColumnName="WEEKDAY_NAME" msprop:design-time-name="37ea0694-52ad-428d-9899-42137d11aa9b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CALWEEK_ISO" msprop:FriendlyName="CALWEEK_ISO" msprop:DbColumnName="CALWEEK_ISO" msprop:design-time-name="e3e141a5-8a73-484b-8559-7b78f13ee440" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CALWEEK_ISO_LONG" msprop:FriendlyName="CALWEEK_ISO_LONG" msprop:DbColumnName="CALWEEK_ISO_LONG" msprop:design-time-name="35c1c20f-2d7f-49fe-8d38-2d254f9db3db" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CALWEEK_ISO_YEAR" msprop:FriendlyName="CALWEEK_ISO_YEAR" msprop:DbColumnName="CALWEEK_ISO_YEAR" msprop:design-time-name="25f18d6e-b8c0-4d8f-856e-10254e431ea6" type="xs:int" minOccurs="0" />
+                  <xs:element name="CALWEEK_ISO_FIRST_DAY" msprop:FriendlyName="CALWEEK_ISO_FIRST_DAY" msprop:DbColumnName="CALWEEK_ISO_FIRST_DAY" msprop:design-time-name="59edf5c5-bd63-473e-82d3-aa3e517cdc2e" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="CALWEEK_ISO_LAST_DAY" msprop:FriendlyName="CALWEEK_ISO_LAST_DAY" msprop:DbColumnName="CALWEEK_ISO_LAST_DAY" msprop:design-time-name="093e7c4f-def9-4e0c-85d7-f2621cb06839" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="CALWEEK_ISO_WEEKDAY_MONTH_SPLIT" msprop:FriendlyName="CALWEEK_ISO_WEEKDAY_MONTH_SPLIT" msprop:DbColumnName="CALWEEK_ISO_WEEKDAY_MONTH_SPLIT" msprop:design-time-name="871004ef-51eb-4cd8-ad98-198836739b48" type="xs:int" minOccurs="0" />
+                  <xs:element name="IS_FIRST_DAY_OF_WEEK_YN" msprop:FriendlyName="IS_FIRST_DAY_OF_WEEK_YN" msprop:DbColumnName="IS_FIRST_DAY_OF_WEEK_YN" msprop:design-time-name="63cdd7c0-571f-4b69-b510-6ad7bb498fae" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IS_LAST_DAY_OF_WEEK_YN" msprop:FriendlyName="IS_LAST_DAY_OF_WEEK_YN" msprop:DbColumnName="IS_LAST_DAY_OF_WEEK_YN" msprop:design-time-name="9c7d90cd-b2e9-405a-9df9-fd3ae89b8ea5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IS_FIRST_DAY_OF_MONTH_YN" msprop:FriendlyName="IS_FIRST_DAY_OF_MONTH_YN" msprop:DbColumnName="IS_FIRST_DAY_OF_MONTH_YN" msprop:design-time-name="45bb9116-7a8c-49e7-915a-95c3b2a67abf" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IS_LAST_DAY_OF_MONTH_YN" msprop:FriendlyName="IS_LAST_DAY_OF_MONTH_YN" msprop:DbColumnName="IS_LAST_DAY_OF_MONTH_YN" msprop:design-time-name="23266c1f-49d0-4c66-b742-30e41682a4b6" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_D_Port" msprop:DbTableName="D_Port" msprop:FriendlyName="D_Port" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="b95f8148-9808-4441-a146-2cdc63177c9a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PortOrder" msprop:FriendlyName="PortOrder" msprop:DbColumnName="PortOrder" msprop:design-time-name="99aae900-628c-41f3-932b-f91aee8dbc34">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Id" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="845eb39f-1bc4-486c-b529-854333a6c67e" type="xs:int" />
+                  <xs:element name="Name" msprop:FriendlyName="Name" msprop:DbColumnName="Name" msprop:design-time-name="a61cb0bd-af9b-4df6-b054-a1b03427120a">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Country" msprop:FriendlyName="Country" msprop:DbColumnName="Country" msprop:design-time-name="c70f0050-c137-4362-9c79-f682b0c8ee8d">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DistanceFromOslo" msprop:FriendlyName="DistanceFromOslo" msprop:DbColumnName="DistanceFromOslo" msprop:design-time-name="471a7e26-83e8-4a9d-b949-eb918b62c838" type="xs:int" />
+                  <xs:element name="DistanceFromPiraeus" msprop:FriendlyName="DistanceFromPiraeus" msprop:DbColumnName="DistanceFromPiraeus" msprop:design-time-name="fabf391c-7a48-42e6-9c9c-585563014940" type="xs:int" />
+                  <xs:element name="RowId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="RowId" msprop:DbColumnName="RowId" msprop:design-time-name="229e9ee2-cd8f-423e-b9cd-70eced74b731" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_D_Ship" msprop:DbTableName="D_Ship" msprop:FriendlyName="D_Ship" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="0c9aca52-d257-49b5-9378-24e7b292a82d">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RowId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="RowId" msprop:DbColumnName="RowId" msprop:design-time-name="b55b0277-29f1-4dba-83e8-0b13cbc40c07" type="xs:int" />
+                  <xs:element name="Id" msprop:FriendlyName="Id" msprop:DbColumnName="Id" msprop:design-time-name="d8398bdf-23ac-4332-ba96-f12e4bdabaa6" type="xs:int" />
+                  <xs:element name="name" msprop:FriendlyName="name" msprop:DbColumnName="name" msprop:design-time-name="a200af7c-373b-464f-9c6a-2afa7bb739b7">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MaxTEU" msprop:FriendlyName="MaxTEU" msprop:DbColumnName="MaxTEU" msprop:design-time-name="eddfdffa-80ad-4284-9162-f2e319146a0a" type="xs:int" />
+                  <xs:element name="SpeedInKnots" msprop:FriendlyName="SpeedInKnots" msprop:DbColumnName="SpeedInKnots" msprop:design-time-name="9b6efd0a-7ecb-4be2-bf05-4a1403ea4089" type="xs:int" />
+                  <xs:element name="SpeedInKm_H" msprop:FriendlyName="SpeedInKm_H" msprop:DbColumnName="SpeedInKm_H" msprop:design-time-name="57b1f6aa-71a3-4674-9016-3a60c8bbcdf5" type="xs:int" />
+                  <xs:element name="Country" msprop:FriendlyName="Country" msprop:DbColumnName="Country" msprop:design-time-name="eee2adc5-2e86-4a9d-83b1-37b5e12645ee">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Yearcost" msprop:FriendlyName="Yearcost" msprop:DbColumnName="Yearcost" msprop:design-time-name="d0e853cf-6ad7-4f78-80d2-584fd8a6f460" type="xs:decimal" />
+                  <xs:element name="Length" msprop:FriendlyName="Length" msprop:DbColumnName="Length" msprop:design-time-name="1e8b02cd-4ed5-4c4a-9ef8-8d876ef1d125" type="xs:int" />
+                  <xs:element name="Width" msprop:FriendlyName="Width" msprop:DbColumnName="Width" msprop:design-time-name="f3a9d86b-4e4f-425f-a1f9-df3bb052c20b" type="xs:int" />
+                  <xs:element name="EndDate" msprop:FriendlyName="EndDate" msprop:DbColumnName="EndDate" msprop:design-time-name="3f89e2cc-6064-4286-a85b-3a2991462569" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="StartDate" msprop:FriendlyName="StartDate" msprop:DbColumnName="StartDate" msprop:design-time-name="83cc70a0-2da7-4dcf-b48e-17e561cff40d" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_T_StayDays" />
+          <xs:field xpath="ShipRowId" />
+          <xs:field xpath="PortCurrentRowId" />
+          <xs:field xpath="LegDateArrival" />
+        </xs:unique>
+        <xs:unique name="dbo_D_Calendar_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_D_Calendar" />
+          <xs:field xpath="CALDAY" />
+        </xs:unique>
+        <xs:unique name="dbo_D_Port_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_D_Port" />
+          <xs:field xpath="RowId" />
+        </xs:unique>
+        <xs:unique name="dbo_D_Ship_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_D_Ship" />
+          <xs:field xpath="RowId" />
+        </xs:unique>
+        <xs:keyref name="FK_T_StayDays_D_Port" refer="dbo_D_Port_Constraint1">
+          <xs:selector xpath=".//dbo_T_StayDays" />
+          <xs:field xpath="PortCurrentRowId" />
+        </xs:keyref>
+        <xs:keyref name="FK_T_StayDays_D_Calendar" refer="dbo_D_Calendar_Constraint1">
+          <xs:selector xpath=".//dbo_T_StayDays" />
+          <xs:field xpath="LegDateArrival" />
+        </xs:keyref>
+        <xs:keyref name="FK_T_StayDays_D_Ship" refer="dbo_D_Ship_Constraint1">
+          <xs:selector xpath=".//dbo_T_StayDays" />
+          <xs:field xpath="ShipRowId" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <DataSourceView_Staydays xmlns="" />
+  </Schema>
+</DataSourceView>

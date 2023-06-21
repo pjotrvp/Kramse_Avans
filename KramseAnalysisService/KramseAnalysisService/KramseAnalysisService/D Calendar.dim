@@ -1,0 +1,643 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f9dc86c7-dbd3-4ca1-bb87-d5e612e7352b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>D Calendar</ID>
+  <Name>D Calendar</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-213" scrolltop="-5173" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="5450" y="11377" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="D_Calendar" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="6964" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000341b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_D_Calendar" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-213</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5173</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="300">
+            <Shape Id="CALDAY" Expanded="false">
+              <Attributes>
+                <Attribute Id="CALDAY" />
+                <Attribute Id="CALMONTH FIRST DAY" />
+                <Attribute Id="CALMONTH LAST DAY" />
+                <Attribute Id="CALMONTH NAME" />
+                <Attribute Id="CALMONTH NR" />
+                <Attribute Id="CALMONTH NR OF DAYS" />
+                <Attribute Id="CALWEEK ISO" />
+                <Attribute Id="CALWEEK ISO FIRST DAY" />
+                <Attribute Id="CALWEEK ISO LAST DAY" />
+                <Attribute Id="CALWEEK ISO LONG" />
+                <Attribute Id="CALWEEK ISO WEEKDAY MONTH SPLIT" />
+                <Attribute Id="CALWEEK ISO YEAR" />
+                <Attribute Id="DAY OF MONTH" />
+                <Attribute Id="IS FIRST DAY OF MONTH YN" />
+                <Attribute Id="IS FIRST DAY OF WEEK YN" />
+                <Attribute Id="IS LAST DAY OF MONTH YN" />
+                <Attribute Id="IS LAST DAY OF WEEK YN" />
+                <Attribute Id="WEEKDAY NAME" />
+                <Attribute Id="WEEKDAY NR" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="CALYEAR" Expanded="false">
+              <Attributes>
+                <Attribute Id="CALYEAR" />
+              </Attributes>
+              <Position x="400" y="20" />
+            </Shape>
+            <Shape Id="CALQUARTER" Expanded="false">
+              <Attributes>
+                <Attribute Id="CALQUARTER" />
+              </Attributes>
+              <Position x="780" y="20" />
+            </Shape>
+            <Shape Id="CALMONTH ISO" Expanded="false">
+              <Attributes>
+                <Attribute Id="CALMONTH ISO" />
+              </Attributes>
+              <Position x="1160" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="654e0c63-5603-4187-8c7e-d59a3397ffe4">
+    <DataSourceViewID>DataSourceView_ShipmentVoyage</DataSourceViewID>
+  </Source>
+  <Type>Time</Type>
+  <ErrorConfiguration dwd:design-time-name="923f27cf-dbb4-4c5c-a45e-ac13fda0ee9b">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="ae1ceee2-b350-423e-9321-a3e20f8b151d">
+      <ID>CALDAY</ID>
+      <Name>CALDAY</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="182b9942-d8fa-4e14-940f-d8f82b9c047d">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e066d50b-b0e3-41cd-86d9-66cc4adebc37">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALDAY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="14cea85f-f5f9-4557-9509-85a4e5afc0c4">
+          <AttributeID>DAY OF MONTH</AttributeID>
+          <Name>DAY OF MONTH</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ea6675ad-7747-41c2-85ca-8b9ab383dee8">
+          <AttributeID>CALYEAR</AttributeID>
+          <Name>CALYEAR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cf73ca2d-f8cf-405d-95d9-c36e8b1cbbdc">
+          <AttributeID>CALMONTH NAME</AttributeID>
+          <Name>CALMONTH NAME</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="39651376-1954-4084-a2b9-a13afb8e978e">
+          <AttributeID>CALMONTH NR</AttributeID>
+          <Name>CALMONTH NR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="78391941-cc28-43b6-b359-33c895684046">
+          <AttributeID>CALMONTH NR OF DAYS</AttributeID>
+          <Name>CALMONTH NR OF DAYS</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="181e8585-27b4-4bcf-811f-080545b6422a">
+          <AttributeID>CALMONTH FIRST DAY</AttributeID>
+          <Name>CALMONTH FIRST DAY</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a3627a50-0bf6-4558-b6ac-87b418a88b73">
+          <AttributeID>CALMONTH LAST DAY</AttributeID>
+          <Name>CALMONTH LAST DAY</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2b73f59c-9443-4d85-8265-784353865584">
+          <AttributeID>WEEKDAY NR</AttributeID>
+          <Name>WEEKDAY NR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ad27b10e-9817-4cc0-9c1a-f11cc98509af">
+          <AttributeID>WEEKDAY NAME</AttributeID>
+          <Name>WEEKDAY NAME</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5217b9fc-38fa-4265-aa40-c931679fd43e">
+          <AttributeID>CALWEEK ISO</AttributeID>
+          <Name>CALWEEK ISO</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5d1e0775-0eb8-4b3d-b55d-0e19b7dae853">
+          <AttributeID>CALWEEK ISO LONG</AttributeID>
+          <Name>CALWEEK ISO LONG</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4695b245-7b20-40a3-8f15-f2226a8dabbc">
+          <AttributeID>CALWEEK ISO YEAR</AttributeID>
+          <Name>CALWEEK ISO YEAR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="233de938-d5f6-487e-80c4-ccb40ca06bc9">
+          <AttributeID>CALWEEK ISO FIRST DAY</AttributeID>
+          <Name>CALWEEK ISO FIRST DAY</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="622bbc85-e9f3-4b4d-b5bc-bdee3882b0f7">
+          <AttributeID>CALWEEK ISO LAST DAY</AttributeID>
+          <Name>CALWEEK ISO LAST DAY</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4ebfb86e-672d-465c-9622-a3f4bcca8878">
+          <AttributeID>CALWEEK ISO WEEKDAY MONTH SPLIT</AttributeID>
+          <Name>CALWEEK ISO WEEKDAY MONTH SPLIT</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d06d2148-3611-4413-a79d-15e946fb2498">
+          <AttributeID>IS FIRST DAY OF WEEK YN</AttributeID>
+          <Name>IS FIRST DAY OF WEEK YN</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5b3485c1-e252-479a-884c-79924226f632">
+          <AttributeID>IS LAST DAY OF WEEK YN</AttributeID>
+          <Name>IS LAST DAY OF WEEK YN</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a69c8a80-6436-4a23-8629-2f0ab40ce235">
+          <AttributeID>IS FIRST DAY OF MONTH YN</AttributeID>
+          <Name>IS FIRST DAY OF MONTH YN</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="90d263fc-125a-4dc8-a080-9c82a9ffbc63">
+          <AttributeID>IS LAST DAY OF MONTH YN</AttributeID>
+          <Name>IS LAST DAY OF MONTH YN</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="61701158-175d-443a-b289-1ad63d2783ae">
+      <ID>DAY OF MONTH</ID>
+      <Name>DAY OF MONTH</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9942273d-4e87-4f65-b176-246ce2fd9e61">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="096bc596-2ab5-4654-9e21-cb4e81de41d7">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>DAY_OF_MONTH</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="28795be4-598f-4a16-b9ed-4e783c3376db">
+      <ID>CALYEAR</ID>
+      <Name>CALYEAR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6c723363-ee5f-4e42-af3b-de925762a6fb">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a12e4fda-039b-4296-bff3-02b7239fefa4">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALDAY</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="dc1efb28-45d5-4e44-8741-773d5f7bb68d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="82e5ff4b-5a1d-47c9-bf5b-3b748ecaa2df">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALYEAR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="6e7d3606-fe01-434e-96b3-2a971eaa80bd">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a962741a-554a-4e6f-959f-3ead02fc515d">
+          <TableID>dbo_D_Calendar</TableID>
+          <ColumnID>CALYEAR</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="42b0f067-d5fa-4d03-b632-d9e9308827cc">
+          <AttributeID>CALQUARTER</AttributeID>
+          <Name>CALQUARTER</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9b69f520-3a41-46c2-93d5-df8cb2c7e533">
+      <ID>CALMONTH ISO</ID>
+      <Name>CALMONTH ISO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8430c9e5-46b8-49bc-939a-32c79e39811a">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="060352f4-2b34-429d-8dc3-719dd24be33b">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_ISO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="540de5c9-7c20-4a32-90c5-02e3f573b7db">
+      <ID>CALMONTH NAME</ID>
+      <Name>CALMONTH NAME</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8ae2350f-39e9-48fc-99bd-fca2fd327ee9">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f4a5e00-bc07-4988-a0b9-6ba1adf7a0a7">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_NAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ba57fada-a1d0-4b8d-a095-c16add8a9f04">
+      <ID>CALMONTH NR</ID>
+      <Name>CALMONTH NR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0a2b9f37-c1ec-4857-ba1b-206b17522bf5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="05b1b9f0-712d-4ffa-ba76-9e4e3702f939">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_NR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e02e4bb8-dd82-45b5-981a-bbf019645b59">
+      <ID>CALMONTH NR OF DAYS</ID>
+      <Name>CALMONTH NR OF DAYS</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c9a4ce3-7305-4bec-a1e4-ca681136baad">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6d863c5a-03cd-4df1-85da-5d5f0ffdc2f2">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_NR_OF_DAYS</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2c9c5d42-d91a-453b-8d48-cd4e55bbb755">
+      <ID>CALMONTH FIRST DAY</ID>
+      <Name>CALMONTH FIRST DAY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="059f5fa5-1cf6-4033-9b48-a44e20e6d3a5">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="99c0ff44-a337-4291-926e-17958ef9f2c8">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_FIRST_DAY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="660ef437-d104-4011-8816-fb46bc3ba9ea">
+      <ID>CALMONTH LAST DAY</ID>
+      <Name>CALMONTH LAST DAY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83e2dc1f-194f-4eeb-a5d4-2c1d5b8329be">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b8d6e7b-cbde-4e02-bbc4-677fc9f427c5">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALMONTH_LAST_DAY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dbc3a78b-af96-4984-812d-9dc546fc3761">
+      <ID>CALQUARTER</ID>
+      <Name>CALQUARTER</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="043f5c53-d854-42ef-b1c4-16825a0c34f4">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7d0296c3-8fc2-4869-ae44-c8b0ae8f92c6">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALDAY</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="a530949b-7e67-4b9a-b1ad-6c4719245670">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="43e21c33-e8d6-4f27-833b-159c620e18da">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALQUARTER</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="239939a3-1fe5-4e4f-9c4c-374d7ad0afb3">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6f192139-d281-40e8-8e66-bad63acd78f2">
+          <TableID>dbo_D_Calendar</TableID>
+          <ColumnID>CALQUARTER</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="f4962e12-3dad-40b4-9f44-1653f447fa01">
+          <AttributeID>CALMONTH ISO</AttributeID>
+          <Name>CALMONTH ISO</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ad48f5b5-93e2-455f-ae7e-eed8a87d578c">
+      <ID>WEEKDAY NR</ID>
+      <Name>WEEKDAY NR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="27887467-6432-4ae4-813a-dffe637935f8">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6539f1e-63a8-4f37-af93-ed3f78e43a24">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>WEEKDAY_NR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="add1b73b-8655-4986-8568-dd8d419893a9">
+      <ID>WEEKDAY NAME</ID>
+      <Name>WEEKDAY NAME</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25da6a2b-a4f5-4932-a50b-1f2956a6791e">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="120f7d1b-68a0-46ed-bea8-881953afba59">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>WEEKDAY_NAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2ac49002-0e62-4e84-96ac-5c6e41ccdc58">
+      <ID>CALWEEK ISO</ID>
+      <Name>CALWEEK ISO</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1af0d5ec-39a2-41c0-88ee-664ed5fde30c">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="962779a4-cbbb-46ae-814a-7b512764c198">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="012b0283-4213-49b5-891f-ff7fe4c3fc10">
+      <ID>CALWEEK ISO LONG</ID>
+      <Name>CALWEEK ISO LONG</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fe6da219-e59c-4dbf-9908-272b8b5613d5">
+          <DataType>WChar</DataType>
+          <DataSize>7</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0fb4eb83-99fd-4c67-ab3b-942d54a43678">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO_LONG</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a1f0437b-36cb-48cd-95e2-fa5566127b29">
+      <ID>CALWEEK ISO YEAR</ID>
+      <Name>CALWEEK ISO YEAR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="99fb9d3e-a0ac-4f44-8ce5-d678f250b14a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4933abbe-d5ea-4089-afb8-14a22bd643c5">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO_YEAR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="93d7ce47-6f67-4400-a61f-5138132659c4">
+      <ID>CALWEEK ISO FIRST DAY</ID>
+      <Name>CALWEEK ISO FIRST DAY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b9558c0-3ba9-4f5e-8a59-6896ec20f7c7">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bd8fa30e-a6e8-47d8-8f9a-eb7481cd2536">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO_FIRST_DAY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bdfdba34-757b-417c-98c7-e686fa9cfa4c">
+      <ID>CALWEEK ISO LAST DAY</ID>
+      <Name>CALWEEK ISO LAST DAY</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7c7ae461-c958-407a-9058-340fd5580dcd">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="28a7936f-0334-433a-b36f-c2f03f1bc9ac">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO_LAST_DAY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1f6eeb36-4a06-44dd-a640-cdd3112e84a3">
+      <ID>CALWEEK ISO WEEKDAY MONTH SPLIT</ID>
+      <Name>CALWEEK ISO WEEKDAY MONTH SPLIT</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f765e447-d8a9-4b40-93d4-6f769aa03b43">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dc4a8bdf-5532-4863-b00c-4bd79ba98c63">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>CALWEEK_ISO_WEEKDAY_MONTH_SPLIT</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f9fd40c6-6bfd-46b2-ac1d-921cff3669bf">
+      <ID>IS FIRST DAY OF WEEK YN</ID>
+      <Name>IS FIRST DAY OF WEEK YN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0c7940a0-17c1-494a-a3dd-b3a274ba7d72">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e669f601-ae8e-4028-8224-71f3fffb823d">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>IS_FIRST_DAY_OF_WEEK_YN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f4fbf950-a01d-4d17-96fe-d3f4370ec32f">
+      <ID>IS LAST DAY OF WEEK YN</ID>
+      <Name>IS LAST DAY OF WEEK YN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3804843e-0329-4bff-91ff-7dcd4ea36d08">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="458be30a-2e84-428d-901a-51e9fd9287fc">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>IS_LAST_DAY_OF_WEEK_YN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f52d0668-5f36-49ed-a3df-659d59b0f908">
+      <ID>IS FIRST DAY OF MONTH YN</ID>
+      <Name>IS FIRST DAY OF MONTH YN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="88c9ed55-100c-4446-8734-7f936fdb226f">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7e25ab77-b125-4aee-b592-f0787ad983d3">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>IS_FIRST_DAY_OF_MONTH_YN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e25ae6b4-3643-4604-907c-0c1e902aab48">
+      <ID>IS LAST DAY OF MONTH YN</ID>
+      <Name>IS LAST DAY OF MONTH YN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f9641b68-baaa-4deb-b39c-267d149a005f">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4afe57a7-a1bc-4936-9e2a-5d4a6c9f0bcc">
+            <TableID>dbo_D_Calendar</TableID>
+            <ColumnID>IS_LAST_DAY_OF_MONTH_YN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="5758f368-36e9-40b4-90ba-ccb540185b89">
+      <ID>Hierarchy</ID>
+      <Name>Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="57ecc8de-5fe7-4c0c-84c5-64802aae6512">
+          <ID>CALYEAR</ID>
+          <Name>CALYEAR</Name>
+          <SourceAttributeID>CALYEAR</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="64ff9c33-8644-4d85-a7eb-740138084872">
+          <ID>CALQUARTER</ID>
+          <Name>CALQUARTER</Name>
+          <SourceAttributeID>CALQUARTER</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="71893c9f-46ad-42d6-8165-e57e43c7c7e1">
+          <ID>CALMONTH ISO</ID>
+          <Name>CALMONTH ISO</Name>
+          <SourceAttributeID>CALMONTH ISO</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="918595e2-1ced-46e4-9a43-b666db52690b">
+          <ID>CALDAY</ID>
+          <Name>CALDAY</Name>
+          <SourceAttributeID>CALDAY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

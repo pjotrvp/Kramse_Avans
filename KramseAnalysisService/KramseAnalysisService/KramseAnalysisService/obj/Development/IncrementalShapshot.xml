@@ -1,0 +1,131 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Kramse_Analysis</Database>
+    <Server>MSI</Server>
+    <ConnectionString>Data Source=MSI;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>CQp5DxYDifmzUeoD/doN2annKHw=6-6-2023 19:01:166-6-2023 19:01:16</TimeStamp>
+        <ID>
+          <String>Pjotr Kramse ODS</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>cvmbEwttL2phmKs0xUEeUmidrQA=6-6-2023 19:07:396-6-2023 19:07:39</TimeStamp>
+        <ID>
+          <String>DataSourceView_ShipmentVoyage</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>mg3L9ZcROfpUrrIM9TjzynslsFc=6-6-2023 19:08:026-6-2023 19:08:02</TimeStamp>
+        <ID>
+          <String>DataSourceView_Staydays</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>muH4E8aHP0tAPYPHbmU7xIhzk2Y=13-6-2023 11:49:196-6-2023 19:23:57</TimeStamp>
+        <ID>
+          <String>D Calendar</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rkjCX7W8uys6GS2Gl/ndUC+vlF8=13-6-2023 11:58:176-6-2023 19:25:35</TimeStamp>
+        <ID>
+          <String>D Item</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>l9hmIYHO+i1rbKx0JR0aw4Puj14=13-6-2023 11:57:316-6-2023 19:26:01</TimeStamp>
+        <ID>
+          <String>D Consignor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>99tP9W5/nyJsRHWpPutpacc7Zbw=6-6-2023 19:26:306-6-2023 19:26:30</TimeStamp>
+        <ID>
+          <String>D Container</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>p/V4OdwFokxfUqT3uGkZBZ/UmJk=13-6-2023 11:59:586-6-2023 19:26:43</TimeStamp>
+        <ID>
+          <String>D Ship</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>o57HefBdl51KPwXoVdzAQ9OKoV8=7-6-2023 18:32:207-6-2023 18:32:20</TimeStamp>
+        <ID>
+          <String>D Calendar 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>M7l61vOtSp73bi/DLwVQGv9422E=7-6-2023 18:32:207-6-2023 18:32:20</TimeStamp>
+        <ID>
+          <String>D Ship 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rLP0hSWFh6tK+YNPPQ17CP5S7ig=13-6-2023 11:59:4512-6-2023 14:02:48</TimeStamp>
+        <ID>
+          <String>D Port</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>vqTftYTmYVCdJcy1FXjUqYSYIkI=12-6-2023 14:02:487-6-2023 18:31:43APH5xl/9wNkdjqYPCvBjf6XhWyI=7-6-2023 18:31:437-6-2023 18:31:43</TimeStamp>
+        <ID>
+          <String>ShipmentVoyage_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>JzTpaRniuh2vVWLzWWC5Jbm4HM8=12-6-2023 14:03:077-6-2023 18:32:20w4cxdn7WETiGm9dfs1WrPo0pZNA=7-6-2023 18:32:207-6-2023 18:32:20</TimeStamp>
+        <ID>
+          <String>Staydays_Cube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Role</Type>
+        <TimeStamp>VR9Oc+BITCFXaijS9ueCfttnH10=13-6-2023 11:00:4213-6-2023 10:58:22</TimeStamp>
+        <ID>
+          <String>Role</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>CeHxf++L8iqyQIH1gxqtKUV1fbk=13-6-2023 10:58:586-6-2023 17:02:06</TimeStamp>
+      <ID>
+        <String>Kramse_Analysis</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>false</ProcessingComplete>
+  <LastDeployed>2023-06-13T10:00:07.14Z</LastDeployed>
+</DeploymentSnapshot>

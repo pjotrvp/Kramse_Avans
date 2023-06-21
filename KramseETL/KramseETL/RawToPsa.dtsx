@@ -11,8 +11,8 @@
   DTS:LocaleID="1043"
   DTS:ObjectName="RawToERP"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{595AAC67-68D7-42D9-8E8A-575AAE0172E7}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{1A5E8B4E-4DB2-4780-9887-2694DE504B92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -7520,35 +7520,35 @@ where [refTable].[VV_VoyageId] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="212.8,41.6"
+          Size="213,42"
           Id="Package\Clear Persistent staging area"
           TopLeft="222.321429044693,53.5294117177853" />
         <NodeLayout
-          Size="110.4,41.6"
+          Size="110,42"
           Id="Package\D_Port"
           TopLeft="526.785715407102,174.926470434906" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\Load D_Consignor"
           TopLeft="22.3214286189446,174.926470434906" />
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Load D_Container"
           TopLeft="193.750000412443,173.014705730699" />
         <NodeLayout
-          Size="139.2,41.6"
+          Size="139,42"
           Id="Package\Load D_Item"
           TopLeft="370.535715074487,173.014705730699" />
         <NodeLayout
-          Size="137.6,41.6"
+          Size="138,42"
           Id="Package\Load D_Ship"
           TopLeft="658.0357156865,173.014705730699" />
         <NodeLayout
-          Size="169.6,41.6"
+          Size="170,42"
           Id="Package\T_ShipmentVoyage"
           TopLeft="301.785714928137,358.455882038741" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\T_StayDays"
           TopLeft="344,434" />
         <EdgeLayout
@@ -8220,13 +8220,13 @@ where [refTable].[VV_VoyageId] = ?</property>
     design-time-name="Package\Load D_Ship">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
+          Size="150,42"
           Id="Package\Load D_Ship\OLE DB Source"
           TopLeft="224.999996647239,102.99999846518" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Load D_Ship\OLE DB Destination"
           TopLeft="176.999997362495,236.999996468425" />
         <EdgeLayout
@@ -8260,9 +8260,7 @@ where [refTable].[VV_VoyageId] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
